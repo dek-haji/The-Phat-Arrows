@@ -2,7 +2,7 @@
 import API from "./dataFetch"
 import eventsForm from "./events";
 // API.delete(2)
-eventsForm.createEventForm()
+// eventsForm.createEventForm()
 
 const sign_in_btn = document.querySelector("#sign-in-btn")
 const sign_up_btn = document.querySelector("#sign-up-btn")
@@ -30,5 +30,8 @@ sign_up_btn.addEventListener("click", function (e) {
     //Then call function to update DOM
     //At this point SIGN UP SUCCESSFUL! or USER NAME ALREADY IN USE!
 })
+
+
+
 
 
