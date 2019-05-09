@@ -1,46 +1,46 @@
                 // this will be our fetch calls component.
 
-
+//These are the URLs we need to copy into the events/messages/tasks/news.js files.
 const taskUrl = "http://localhost:3000/tasks";
 const messagesUrl = "http://localhost:3000/messages";
 const articleUrl = "http://localhost:3000/articles";
 const usersUrl = "http://localhost:3000/users";
-const eventsUrl = "http://localhost:3000/events"
+const eventsUrl = "http://localhost:3000/events";
 
-
+//When calling the function, the URL will be the one that is unique to each JS file.  example.  API.getOne(articleUrl, 2); will get you the second article.  Copy past the var that you need from above, at the top of your .js.
 const API = {
-    getAll: function() {
-      return fetch(eventsUrl)
+    getAll: function(url) {
+      return fetch(url)
       .then(results => results.json())
-      .then(parsedEvents => {
-        console.log("this is get all",parsedEvents)
+      .then(parsedResults => {
+        console.log("this is get all", parsedResults)
       })
     },
-    getOne: function(Id) {
-      return fetch(`${eventsUrl}/${Id}`, {
+    getOne: function(url, Id) {
+      return fetch(`${url}/${Id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json"
         }
       }).then(response => response.json())
-      .then(parsedSingle => {
-          console.log("this is a single obj",parsedSingle)
+      .then(parsedResults => {
+          console.log("this is a single obj",parsedResults)
       });
     },
-    save: function(eventObject) {
-      return fetch(baseUrl, {
+    save: function(url, object) {
+      return fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(eventObject)
+        body: JSON.stringify(object)
       }).then(response => response.json())
       .then(savedData => {
           console.log("this is savedData",savedData)
       });
     },
-    delete: function(eventId) {
-      return fetch(`${eventsUrl}/${eventId}`, {
+    delete: function(url, Id) {
+      return fetch(`${url}/${Id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json"
@@ -48,8 +48,8 @@ const API = {
       }).then(response => response.json())
       .then(console.log("succesfully deleted"));
     },
-    edit: function(id, object) {
-      return fetch(`${baseUrl}/${id}`, {
+    edit: function(url, id, object) {
+      return fetch(`${url}/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
