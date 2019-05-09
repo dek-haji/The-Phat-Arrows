@@ -1,7 +1,7 @@
 import API from "./dataFetch"
 
-const eventsForm = {
-    createEventForm(){
+const create = {
+    eventForm(){
         let container = document.querySelector(".output");
 
         // create form HTML elements
