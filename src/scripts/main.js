@@ -1,8 +1,4 @@
-import sayHello from "./hello"
-import sayGoodbye from "./goodbye"
-import SandwichMaker from "./sandwichMaker"
-
-sayHello()
-sayGoodbye()
-
-SandwichMaker.placeOrder("rye", "capicola", "provolone")
+import API from "./dataFetch"
+import eventsForm from "./events";
+// API.delete(2)
+eventsForm.createEventForm()
