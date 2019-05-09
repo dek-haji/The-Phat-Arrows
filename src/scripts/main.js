@@ -1,2 +1,4 @@
 import API from "./dataFetch"
-API.getAll()
+import eventsForm from "./events";
+// API.delete(2)
+eventsForm.createEventForm()

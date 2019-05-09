@@ -1,4 +1,4 @@
-import API from "./database"
+import API from "./dataFetch"
 
 const eventsForm = {
     createEventForm(){

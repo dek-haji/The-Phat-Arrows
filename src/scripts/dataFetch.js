@@ -1,21 +1,19 @@
+                // this will be our fetch calls component.
+
+
 const taskUrl = "http://localhost:3000/tasks";
 const messagesUrl = "http://localhost:3000/messages";
-const newsUrl = "http://localhost:3000/news";
+const articleUrl = "http://localhost:3000/articles";
 const usersUrl = "http://localhost:3000/users";
 const eventsUrl = "http://localhost:3000/events"
 
 
 const API = {
-    // getAllUsers: function() {
-    //     return fetch(usersUrl).then(results => results.json());
-    //   },
-
-
     getAll: function() {
       return fetch(eventsUrl)
       .then(results => results.json())
       .then(parsedEvents => {
-        console.log(parsedEvents)
+        console.log("this is get all",parsedEvents)
       })
     },
     getOne: function(Id) {
@@ -24,7 +22,10 @@ const API = {
         headers: {
           "Content-Type": "application/json"
         }
-      }).then(response => response.json());
+      }).then(response => response.json())
+      .then(parsedSingle => {
+          console.log("this is a single obj",parsedSingle)
+      });
     },
     save: function(eventObject) {
       return fetch(baseUrl, {
@@ -33,15 +34,19 @@ const API = {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(eventObject)
-      }).then(response => response.json());
+      }).then(response => response.json())
+      .then(savedData => {
+          console.log("this is savedData",savedData)
+      });
     },
     delete: function(eventId) {
-      return fetch(`${baseUrl}/${eventId}`, {
+      return fetch(`${eventsUrl}/${eventId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json"
         }
-      }).then(response => response.json());
+      }).then(response => response.json())
+      .then(console.log("succesfully deleted"));
     },
     edit: function(id, object) {
       return fetch(`${baseUrl}/${id}`, {
@@ -50,92 +55,13 @@ const API = {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(object)
-      }).then(response => response.json());
+      }).then(response => response.json())
+      .then(editedDated => {
+          console.log("this is edited stuff", editedDated)
+      });
     }
 
   }
-
-
-  //   getAllTasks: function() {
-  //       return fetch(baseUrl).then(results => results.json());
-  //     },
-  //     getOneTask: function(taskId) {
-  //       return fetch(`${baseUrl}/${taskId}`, {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       }).then(response => response.json());
-  //     },
-  //     saveTask: function(taskObject) {
-  //       return fetch(baseUrl, {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         },
-  //         body: JSON.stringify(taskObject)
-  //       }).then(response => response.json());
-  //     },
-  //     deleteTask: function(taskId) {
-  //       return fetch(`${baseUrl}/${taskId}`, {
-  //         method: "DELETE",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       }).then(response => response.json());
-  //     },
-  //     editTask: function(taskId, taskObject) {
-  //       return fetch(`${baseUrl}/${taskId}`, {
-  //         method: "PUT",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         },
-  //         body: JSON.stringify(taskObject)
-  //       }).then(response => response.json());
-  //     },
-
-
-
-  //     getAllArticles: function() {
-  //       return fetch(baseUrl).then(results => results.json());
-  //     },
-  //     getOneArticle: function(articleId) {
-  //       return fetch(`${baseUrl}/${articleId}`, {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       }).then(response => response.json());
-  //     },
-  //     saveArticle: function(articleObject) {
-  //       return fetch(baseUrl, {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         },
-  //         body: JSON.stringify(articleObject)
-  //       }).then(response => response.json());
-  //     },
-  //     deleteArticle: function(articleId) {
-  //       return fetch(`${baseUrl}/${articleId}`, {
-  //         method: "DELETE",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       }).then(response => response.json());
-  //     },
-  //     editArticle: function(articleId, articleObject) {
-  //       return fetch(`${baseUrl}/${articleId}`, {
-  //         method: "PUT",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         },
-  //         body: JSON.stringify(articleObject)
-  //       }).then(response => response.json());
-  //     }
-
-  // };
-
 
 
   export default API
