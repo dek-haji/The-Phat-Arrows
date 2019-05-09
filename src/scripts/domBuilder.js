@@ -1,8 +1,10 @@
-import API from "./dataFetch"
 
-const eventsForm = {
+
+const domBuilder = {
     createEventForm(){
-        let container = document.querySelector(".output");
+        // let homepage = document.querySelector(".home-div");
+        // homepage.innerHTML = "";
+        let container = document.getElementById("domOutput");
 
         // create form HTML elements
         let newEventDiv = document.createElement("div");
@@ -37,6 +39,16 @@ const eventsForm = {
 
         // append form container to event container (temporarily)
         container.appendChild(newEventDiv);
+    },
+    navbar(){
+        document.querySelector(".events").addEventListener("click", ()=> {
+            let homepage = document.querySelector(".home-div");
+        homepage.innerHTML = "";
+        let image = document.querySelector(".bg-img")
+               let parent = image.parentNode
+               parent.removeChild(image)
+        })
     }
 }
-export default eventsForm
+
+export default domBuilder

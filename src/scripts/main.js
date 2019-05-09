@@ -1,8 +1,9 @@
 
 import API from "./dataFetch"
-import eventsForm from "./events";
+import domBuilder from "./domBuilder";
 // API.delete(2)
-eventsForm.createEventForm()
+domBuilder.createEventForm()
+domBuilder.navbar()
 
 const sign_in_btn = document.querySelector("#sign-in-btn")
 const sign_up_btn = document.querySelector("#sign-up-btn")
