@@ -43,37 +43,37 @@
     </nav>
     <!-- Div containing two fieldsets for sign in or sign up -->
     <div class="home-div">
-        <form class="sign-in">
+        <div class="sign-in">
             <h1>Sign In</h1>
             <fieldset>
                 <div class="form-group">
-                    <label for="sign-in-username">Email address</label>
-                    <input type="username" class="form-control" id="sign-in-username" aria-describedby="emailHelp"
+                    <label for="sign-in-username">Username</label>
+                    <input  class="form-control" id="sign-in-username" aria-describedby="emailHelp"
                     placeholder="Enter username">
                 </div>
                 <div class="form-group">
                     <label for="sign-in-password">Password</label>
-                    <input type="password" class="form-control" id="sign-in-password" placeholder="Password">
+                    <input   class="form-control" id="sign-in-password" placeholder="Password">
                 </div>
             </fieldset>
-            <button type="submit" class="btn btn-primary">Sign In</button>
-        </form>
+            <button  type="button" class="btn btn-primary" id="sign-in-btn">Sign In</button>
+        </div>
         <p>- or -</p>
-        <form class="sign-up">
+        <div class="sign-up">
             <h1>Sign Up</h1>
             <fieldset>
                 <div class="form-group">
-                    <label for="sign-up-username">Email address</label>
-                    <input type="username" class="form-control" id="sign-up-username" aria-describedby="emailHelp"
+                    <label for="sign-up-username">Username</label>
+                    <input  class="form-control" id="sign-up-username" aria-describedby="emailHelp"
                     placeholder="Enter username">
                 </div>
                 <div class="form-group">
                     <label for="sign-up-username">Password</label>
-                    <input type="password" class="form-control" id="sign-up-password" placeholder="Password">
+                    <input  class="form-control" id="sign-up-password" placeholder="Password">
                 </div>
             </fieldset>
-            <button type="submit" class="btn btn-primary">Create Account</button>
-        </form>
+            <button class="btn btn-primary" id="sign-up-btn">Create Account</button>
+        </div>
     </div>
     <img src="images/walnut.jpg" class="bg-img" alt="">
     <script src="bundle.js"></script>
