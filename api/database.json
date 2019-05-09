@@ -1,0 +1,157 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "user_name": "Ned Stark",
+        "password": "password"
+      },
+      {
+        "id": 2,
+        "user_name": "Robert Baratheon",
+        "password": "password"
+      },
+      {
+        "id": 3,
+        "user_name": "Jon Snow",
+        "password": "password"
+      },
+      {
+        "id": 4,
+        "user_name": "Daenerys Targaryen",
+        "password": "password"
+      }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "userId": 1,
+            "message_content": "Hey, I'm dead, yo"
+        },
+        {
+            "id": 2,
+            "userId": 3,
+            "message_content": "Yeah, well, I'm stuck on this damn wall"
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "message_content": "Dude, I have no head and you're bitching about a wall."
+        },
+        {
+            "id": 4,
+            "userId": 3,
+            "message_content": "YOU'RE NOT MY REAL DAD!"
+        }
+    ], 
+    "articles": [
+        {
+            "id": 1,
+            "userId": 1, 
+            "article_title": "This is an article title",
+            "article_blurb": "This is an article blurd",
+            "article_link": "https://news.link.com",
+            "article_published": "2011-07-14"
+        },
+        {
+            "id": 2,
+            "userId": 1, 
+            "article_title": "This is an article title",
+            "article_blurb": "This is an article blurd",
+            "article_link": "https://news.link.com",
+            "article_published": "2011-07-14"
+        },
+        {
+            "id": 3,
+            "userId": 1, 
+            "article_title": "This is an article title",
+            "article_blurb": "This is an article blurd",
+            "article_link": "https://news.link.com",
+            "article_published": "2011-07-14"
+        },
+        {
+            "id": 4,
+            "userId": 1, 
+            "article_title": "This is an article title",
+            "article_blurb": "This is an article blurd",
+            "article_link": "https://news.link.com",
+            "article_published": "2011-07-14"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "userId": 1,
+            "task_title": "This is a task title",
+            "task_doneBy": "2030-07-14",
+            "task_completed": false
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "task_title": "This is a task title",
+            "task_doneBy": "2030-07-14",
+            "task_completed": false
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "task_title": "This is a task title",
+            "task_doneBy": "2030-07-14",
+            "task_completed": false
+        },
+        {
+            "id": 4,
+            "userId": 1,
+            "task_title": "This is a task title",
+            "task_doneBy": "2030-07-14",
+            "task_completed": false
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "userId": 1,
+            "event_name": "This is an event name",
+            "event_details": "This is an even detail",
+            "event_date": "2011-07-14"
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "event_name": "This is an event name",
+            "event_details": "This is an even detail",
+            "event_date": "2011-07-14"
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "event_name": "This is an event name",
+            "event_details": "This is an even detail",
+            "event_date": "2011-07-14"
+        },
+        {
+            "id": 4,
+            "userId": 1,
+            "event_name": "This is an event name",
+            "event_details": "This is an even detail",
+            "event_date": "2011-07-14"
+        }
+    ], 
+    "friends": [
+        {
+            "id": 1, 
+            "userId": 1, 
+            "otherFriendsId": 3
+        },
+        {
+            "id": 2, 
+            "userId": 1, 
+            "otherFriendsId": 2
+        },
+        {
+            "id": 3, 
+            "userId": 1, 
+            "otherFriendsId": 4
+        }
+    ]
+}
