@@ -19,3 +19,6 @@ Soon to feature cryptocurrency micro payments, and cross border gambling.
 ### Setup Nutshel
 1. Clone or Fork from GITHUB
 2. 
+
+### Database Diagram
+![alt text](public/images/DBDiagram.png)
