@@ -17,6 +17,13 @@ const API = {
         return parsedEvents
       })
   },
+  existingUserCheck: function (username) {
+    return fetch(`http://localhost:3000/users?user_name=${username}`)
+      .then(results => results.json())
+      .then(parsedEvents => {
+        return parsedEvents
+      })
+  },
   getAll: function (url) {
     return fetch(url)
       .then(results => results.json())
@@ -32,7 +39,8 @@ const API = {
       }
     }).then(response => response.json())
       .then(parsedResults => {
-        console.log("this is a single obj", parsedResults)
+        //console.log("this is a single obj", parsedResults)
+        return parsedResults
       });
   },
   save: function (url, object) {

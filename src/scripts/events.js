@@ -1,7 +1,7 @@
 import API from "./dataFetch"
 
 const create = {
-    eventForm(){
+    eventsForm(){
         let container = document.querySelector(".output");
 
         // create form HTML elements
@@ -39,4 +39,4 @@ const create = {
         container.appendChild(newEventDiv);
     }
 }
-export default eventsForm
+//export default eventsForm
