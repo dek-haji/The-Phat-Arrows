@@ -1,9 +1,19 @@
 
 import API from "./dataFetch"
-import eventsForm from "./events";
-// API.delete(2)
-// eventsForm.createEventForm()
+import domBuilder from "./domBuilder";
+import dataFetch from "./dataFetch";
 
+
+const taskUrl = "http://localhost:3000/tasks";
+const messagesUrl = "http://localhost:3000/messages";
+const articleUrl = "http://localhost:3000/articles";
+const usersUrl = "http://localhost:3000/users";
+const eventsUrl = "http://localhost:3000/events";
+
+domBuilder.createEventForm()
+domBuilder.navbar()
+domBuilder.createNewsForm()
+domBuilder.createTaskForm()
 const sign_in_btn = document.querySelector("#sign-in-btn")
 const sign_up_btn = document.querySelector("#sign-up-btn")
 
