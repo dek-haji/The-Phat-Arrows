@@ -28,7 +28,8 @@ const API = {
     return fetch(url)
       .then(results => results.json())
       .then(parsedResults => {
-        console.log("this is get all", parsedResults)
+        //console.log("this is get all", parsedResults)
+        return parsedResults
       })
   },
   getOne: function (url, Id) {

@@ -45,22 +45,30 @@
     {
       "id": 1,
       "userId": 1,
-      "message_content": "Hey, I'm dead, yo"
+      "message_content": "Hey, I'm dead, yo",
+      "date": "2019-05-01",
+      "time": "23:59:59"
     },
     {
       "id": 2,
       "userId": 3,
-      "message_content": "Yeah, well, I'm stuck on this damn wall"
+      "message_content": "Yeah, well, I'm stuck on this damn wall",
+      "date": "2019-05-01",
+      "time": "23:50:56"
     },
     {
       "id": 3,
       "userId": 1,
-      "message_content": "Dude, I have no head and you're bitching about a wall."
+      "message_content": "Dude, I have no head and you're bitching about a wall.",
+      "date": "2019-05-01",
+      "time": "24:40:59"
     },
     {
       "id": 4,
       "userId": 3,
-      "message_content": "YOU'RE NOT MY REAL DAD!"
+      "message_content": "YOU'RE NOT MY REAL DAD!",
+      "date": "2019-05-01",
+      "time": "19:14:59"
     }
   ],
   "articles": [
@@ -70,7 +78,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-14"
+      "article_published": "2017-07-14"
     },
     {
       "id": 2,
@@ -78,7 +86,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-14"
+      "article_published": "2015-07-14"
     },
     {
       "id": 3,
@@ -86,7 +94,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-14"
+      "article_published": "2011-02-14"
     },
     {
       "id": 4,
@@ -94,7 +102,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-14"
+      "article_published": "2011-07-11"
     }
   ],
   "tasks": [
@@ -118,23 +126,9 @@
       "task_title": "This is a task title",
       "task_doneBy": "2030-07-14",
       "task_completed": false
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "task_title": "This is a task title",
-      "task_doneBy": "2030-07-14",
-      "task_completed": false
     }
   ],
   "events": [
-    {
-      "id": 1,
-      "userId": 1,
-      "event_name": "This is an event name",
-      "event_details": "This is an even detail",
-      "event_date": "2011-07-14"
-    },
     {
       "id": 3,
       "userId": 1,
@@ -147,7 +141,21 @@
       "userId": 1,
       "event_name": "This is an event name",
       "event_details": "This is an even detail",
-      "event_date": "2011-07-14"
+      "event_date": "2017-07-14"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "event_name": "This is an event name",
+      "event_details": "This is an even detail",
+      "event_date": "2015-07-14"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "event_name": "This is an event name",
+      "event_details": "This is an even detail",
+      "event_date": "2010-07-14"
     }
   ],
   "friends": [

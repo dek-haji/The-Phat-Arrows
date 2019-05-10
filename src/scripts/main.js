@@ -10,10 +10,7 @@ const articleUrl = "http://localhost:3000/articles";
 const usersUrl = "http://localhost:3000/users";
 const eventsUrl = "http://localhost:3000/events";
 
-domBuilder.createEventForm()
-domBuilder.navbar()
-domBuilder.createNewsForm()
-domBuilder.createTaskForm()
+
 const sign_in_btn = document.querySelector("#sign-in-btn")
 const sign_up_btn = document.querySelector("#sign-up-btn")
 
@@ -24,9 +21,6 @@ var curr_id = sessionStorage.getItem("session_user_id")
 if (curr_id > 0) {
     sendUserHome()
 }
-
-
-
 
 //SIGN IN BUTTON LISTENER
 sign_in_btn.addEventListener("click", function (e) {
@@ -160,7 +154,48 @@ log_out_btn.addEventListener("click", function (e) {
     document.querySelector("#sign-up-password").value = ""
     document.querySelector("#sign-in-username").value = ""
     document.querySelector("#sign-in-password").value = ""
+    //Clear output divs
+    let output = document.querySelector("#newsOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#eventOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#taskOutput")
+    output.innerHTML = ""
+})
+//ADD LISTENERS TO NAV BAR
+let news = document.querySelector(".news")
+news.addEventListener("click", function(e){
+    let output = document.querySelector("#newsOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#eventOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#taskOutput")
+    output.innerHTML = ""
+    domBuilder.createNewsOutput()
+})
+let events = document.querySelector(".events")
+events.addEventListener("click", function(e){
+    let output = document.querySelector("#newsOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#eventOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#taskOutput")
+    output.innerHTML = ""
+    domBuilder.createEventOutput()
+})
+let tasks = document.querySelector(".tasks")
+tasks.addEventListener("click", function(e){
+    let output = document.querySelector("#newsOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#eventOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#taskOutput")
+    output.innerHTML = ""
+    domBuilder.createTaskOutput()
 })
 
 
-
+//domBuilder.createNewsOutput()
+//domBuilder.createEventOutput()
+//domBuilder.createNewsOutput()
+//domBuilder.createTaskOutput()
