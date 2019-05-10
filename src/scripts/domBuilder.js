@@ -62,7 +62,7 @@ const domBuilder = {
         saveNewsButton.classList.add("task--news--button");
 
         // add text to button
-        saveNewsButton.textContent = "save"
+        saveNewsButton.textContent = "save news"
 
         // define input attributes
         newsName.setAttribute("type", "text")
