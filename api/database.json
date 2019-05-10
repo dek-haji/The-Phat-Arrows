@@ -25,22 +25,30 @@
     {
       "id": 1,
       "userId": 1,
-      "message_content": "Hey, I'm dead, yo"
+      "message_content": "Hey, I'm dead, yo",
+      "date": "2019-05-10",
+      "time": "20:34:01"
     },
     {
       "id": 2,
       "userId": 3,
-      "message_content": "Yeah, well, I'm stuck on this damn wall"
+      "message_content": "Yeah, well, I'm stuck on this damn wall",
+      "date": "2019-05-10",
+      "time": "20:36:01"
     },
     {
       "id": 3,
       "userId": 1,
-      "message_content": "Dude, I have no head and you're bitching about a wall."
+      "message_content": "Dude, I have no head and you're bitching about a wall.",
+      "date": "2019-05-10",
+      "time": "20:37:01"
     },
     {
       "id": 4,
       "userId": 3,
-      "message_content": "YOU'RE NOT MY REAL DAD!"
+      "message_content": "YOU'RE NOT MY REAL DAD!",
+      "date": "2019-05-10",
+      "time": "20:39:01"
     }
   ],
   "articles": [
@@ -58,7 +66,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-14"
+      "article_published": "2011-07-15"
     },
     {
       "id": 3,
@@ -66,7 +74,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-14"
+      "article_published": "2011-07-16"
     },
     {
       "id": 4,
@@ -74,7 +82,14 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-14"
+      "article_published": "2011-07-17"
+    },
+    {
+      "article_title": "Test 1",
+      "article_blurb": "Test 2",
+      "article_link": "Test 3",
+      "article_published": "2019-05-08",
+      "id": 5
     }
   ],
   "tasks": [
@@ -89,22 +104,27 @@
       "id": 2,
       "userId": 1,
       "task_title": "This is a task title",
-      "task_doneBy": "2030-07-14",
+      "task_doneBy": "2030-07-15",
       "task_completed": false
     },
     {
       "id": 3,
       "userId": 1,
       "task_title": "This is a task title",
-      "task_doneBy": "2030-07-14",
+      "task_doneBy": "2030-07-16",
       "task_completed": false
     },
     {
       "id": 4,
       "userId": 1,
       "task_title": "This is a task title",
-      "task_doneBy": "2030-07-14",
+      "task_doneBy": "2030-07-17",
       "task_completed": false
+    },
+    {
+      "task_title": "test",
+      "task_doneBy": "2019-05-09",
+      "id": 5
     }
   ],
   "events": [
@@ -128,6 +148,12 @@
       "event_name": "This is an event name",
       "event_details": "This is an even detail",
       "event_date": "2011-07-14"
+    },
+    {
+      "event_name": "test",
+      "event_details": "test",
+      "event_date": "2019-05-08",
+      "id": 5
     }
   ],
   "friends": [

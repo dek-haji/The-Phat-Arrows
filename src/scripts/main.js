@@ -2,6 +2,7 @@
 import API from "./dataFetch"
 import domBuilder from "./domBuilder";
 import dataFetch from "./dataFetch";
+import call from "./eventCalls";
 
 
 const taskUrl = "http://localhost:3000/tasks";
@@ -16,6 +17,9 @@ domBuilder.createNewsForm()
 domBuilder.createTaskForm()
 const sign_in_btn = document.querySelector("#sign-in-btn")
 const sign_up_btn = document.querySelector("#sign-up-btn")
+call.eventCall()
+call.newscall()
+call.taskCall()
 
 
 sign_in_btn.addEventListener("click", function (e) {
@@ -40,8 +44,3 @@ sign_up_btn.addEventListener("click", function (e) {
     //Then call function to update DOM
     //At this point SIGN UP SUCCESSFUL! or USER NAME ALREADY IN USE!
 })
-
-
-
-
-
