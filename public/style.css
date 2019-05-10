@@ -19,4 +19,26 @@
     width: 80%;
     position: sticky;
 }
-
+button{
+    width: 50px
+}
+.add--event--form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px
+}
+.add--news--form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    align-content: center
+}
+.add--task--form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    align-content: center
+}
