@@ -19,6 +19,26 @@
       "id": 4,
       "user_name": "Daenerys Targaryen",
       "password": "password"
+    },
+    {
+      "user_name": "Gendry",
+      "password": "truKing",
+      "id": 5
+    },
+    {
+      "user_name": "Joffry",
+      "password": "bratking",
+      "id": 6
+    },
+    {
+      "user_name": "Rob Stark",
+      "password": "kingofnorth",
+      "id": 7
+    },
+    {
+      "user_name": "GeorgeRMartin666",
+      "password": "nobookforyou",
+      "id": 8
     }
   ],
   "messages": [
@@ -26,29 +46,29 @@
       "id": 1,
       "userId": 1,
       "message_content": "Hey, I'm dead, yo",
-      "date": "2019-05-10",
-      "time": "20:34:01"
+      "date": "2019-05-01",
+      "time": "23:59:59"
     },
     {
       "id": 2,
       "userId": 3,
       "message_content": "Yeah, well, I'm stuck on this damn wall",
-      "date": "2019-05-10",
-      "time": "20:36:01"
+      "date": "2019-05-01",
+      "time": "23:50:56"
     },
     {
       "id": 3,
       "userId": 1,
       "message_content": "Dude, I have no head and you're bitching about a wall.",
-      "date": "2019-05-10",
-      "time": "20:37:01"
+      "date": "2019-05-01",
+      "time": "24:40:59"
     },
     {
       "id": 4,
       "userId": 3,
       "message_content": "YOU'RE NOT MY REAL DAD!",
-      "date": "2019-05-10",
-      "time": "20:39:01"
+      "date": "2019-05-01",
+      "time": "19:14:59"
     }
   ],
   "articles": [
@@ -58,7 +78,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-14"
+      "article_published": "2017-07-14"
     },
     {
       "id": 2,
@@ -74,7 +94,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-16"
+      "article_published": "2011-02-14"
     },
     {
       "id": 4,
@@ -125,16 +145,14 @@
       "task_title": "test",
       "task_doneBy": "2019-05-09",
       "id": 5
+    },
+    {
+      "task_title": "test",
+      "task_doneBy": "2019-05-28",
+      "id": 6
     }
   ],
   "events": [
-    {
-      "id": 1,
-      "userId": 1,
-      "event_name": "This is an event name",
-      "event_details": "This is an even detail",
-      "event_date": "2011-07-14"
-    },
     {
       "id": 3,
       "userId": 1,
@@ -147,13 +165,21 @@
       "userId": 1,
       "event_name": "This is an event name",
       "event_details": "This is an even detail",
-      "event_date": "2011-07-14"
+      "event_date": "2017-07-14"
     },
     {
-      "event_name": "test",
-      "event_details": "test",
-      "event_date": "2019-05-08",
-      "id": 5
+      "id": 5,
+      "userId": 1,
+      "event_name": "This is an event name",
+      "event_details": "This is an even detail",
+      "event_date": "2015-07-14"
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "event_name": "This is an event name",
+      "event_details": "This is an even detail",
+      "event_date": "2010-07-14"
     }
   ],
   "friends": [

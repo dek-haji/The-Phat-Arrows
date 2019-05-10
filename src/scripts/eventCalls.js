@@ -3,6 +3,7 @@ import API from "./dataFetch";
 const eventsUrl = "http://localhost:3000/events";
 const articleUrl = "http://localhost:3000/articles";
 const taskUrl = "http://localhost:3000/tasks";
+const messagesUrl = "http://localhost:3000/messages";
 
 const call = {
     eventCall() {
@@ -47,7 +48,16 @@ const call = {
             task_doneBy: taskCompletion
         }
         API.save(taskUrl, taskObj)
-    })}
+    })},
+    messageCall() {
+    const saveNewMessage = document.querySelector(".save--message")
+    saveNewMessage.addEventListener("click", (message) => {
+        let messageContent = document.querySelector("new--message--content")
+        let messageDate = document.querySelector("new--message--date")
+        let messageTime = document.querySelector("new--message--time")
+        console.log("Messages", messageContent, messageDate, messageTime)
+    })
+    }
 }
 
 
