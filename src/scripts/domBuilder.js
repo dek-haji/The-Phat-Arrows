@@ -1,3 +1,5 @@
+import API from "./dataFetch";
+
 const domBuilder = {
 
     navbar() {
@@ -103,6 +105,155 @@ const domBuilder = {
 
         // append form container to event container (temporarily)
         taskContainer.appendChild(taskDiv)
+    },
+    createEventOutput() {
+        //GET DATA
+        var curr_id = sessionStorage.getItem("session_user_id")
+        API.getAll(`http://localhost:3000/events?userId=${curr_id}`)
+            .then(events => {
+                let newOrder = []
+                newOrder = events.sort(function(a, b){
+                    a = a.event_date.split("-").join("");
+                    b = b.event_date.split("-").join("");
+                    return a - b
+                })
+                newOrder.reverse()
+                newOrder.forEach(event => {
+                    let ID = event.id
+                    //CREATE & POPULATE ELEMENTS
+                    let output = document.querySelector("#eventOutput")
+                    let card = document.createElement("div")
+                    card.classList.add("card")
+
+                    let name = document.createElement("h2")
+                    name.textContent = event.event_name
+                    card.appendChild(name)
+
+                    let details = document.createElement("p")
+                    details.textContent = event.event_details
+                    card.appendChild(details)
+
+                    let date = document.createElement("p")
+                    date.textContent = event.event_date
+                    card.appendChild(date)
+                    //ADD REMOVE BUTTON AND EVENT LISTENER
+                    let removeButton = document.createElement("button")
+                    removeButton.addEventListener("click", function(event){
+                        //Remove from API/JSON
+                        API.delete("http://localhost:3000/events", ID)
+                        //Remove from DOM
+                        let parent = card.parentNode
+                        parent.removeChild(card)
+                    })
+                    removeButton.textContent = "REMOVE"
+                    removeButton.classList.add("btn-outline-success")
+                    card.appendChild(removeButton)
+
+                    output.appendChild(card)
+
+                })
+            })
+    },
+    createNewsOutput() {
+        //GET DATA
+        var curr_id = sessionStorage.getItem("session_user_id")
+        API.getAll(`http://localhost:3000/articles?userId=${curr_id}`)
+            .then(articles => {
+                let newOrder = []
+                newOrder = articles.sort(function(a, b){
+                    a = a.article_published.split("-").join("");
+                    b = b.article_published.split("-").join("");
+                    return a - b
+                })
+                newOrder.reverse()
+                newOrder.forEach(article => {
+                    let ID = article.id
+                    //CREATE & POPULATE ELEMENTS
+                    let output = document.querySelector("#newsOutput")
+
+                    let card = document.createElement("div")
+                    card.classList.add("card")
+                    let title = document.createElement("h2")
+                    title.textContent = article.article_title
+                    card.appendChild(title)
+
+                    let date = document.createElement("h4")
+                    date.textContent = article.article_published
+                    card.appendChild(date)
+
+                    let blurb = document.createElement("p")
+                    blurb.textContent = article.article_blurb
+                    card.appendChild(blurb)
+
+                    let url = document.createElement("p")
+                    url.textContent = article.article_link
+                    card.appendChild(url)
+
+                    //ADD REMOVE BUTTON AND EVENT LISTENER
+                    let removeButton = document.createElement("button")
+                    removeButton.addEventListener("click", function(event){
+                        //Remove from API/JSON
+                        API.delete("http://localhost:3000/articles", ID)
+                        //Remove from DOM
+                        let parent = card.parentNode
+                        parent.removeChild(card)
+                    })
+                    removeButton.textContent = "REMOVE"
+                    removeButton.classList.add("btn-outline-success")
+                    card.appendChild(removeButton)
+
+
+                    output.appendChild(card)
+
+                })
+            })
+    },
+    createTaskOutput() {
+        //GET DATA
+        var curr_id = sessionStorage.getItem("session_user_id")
+        API.getAll(`http://localhost:3000/tasks?userId=${curr_id}`)
+            .then(tasks => {
+                let newOrder = []
+                newOrder = tasks.sort(function(a, b){
+                    a = a.task_doneBy.split("-").join("");
+                    b = b.task_doneBy.split("-").join("");
+                    return a - b
+                })
+                newOrder.reverse()
+                newOrder.forEach(task => {
+                    let ID = task.id
+                    //CREATE & POPULATE ELEMENTS
+                    let output = document.querySelector("#taskOutput")
+
+                    let card = document.createElement("div")
+                    card.classList.add("card")
+                    let name = document.createElement("h4")
+                    name.textContent = task.task_title
+                    card.appendChild(name)
+
+                    let dueDate = document.createElement("p")
+                    dueDate.textContent = task.task_doneBy
+                    card.appendChild(dueDate)
+
+                    //ADD REMOVE BUTTON AND EVENT LISTENER
+                    let removeButton = document.createElement("button")
+                    //completedBox.setAttribute("type", "checkbox")
+                    removeButton.addEventListener("click", function(event){
+                        //Remove from API/JSON
+                        API.delete("http://localhost:3000/tasks", ID)
+                        //Remove from DOM
+                        let parent = card.parentNode
+                        parent.removeChild(card)
+                    })
+                    removeButton.textContent = "Mark as Complete"
+                    removeButton.classList.add("btn-outline-success")
+                    card.appendChild(removeButton)
+
+                    output.appendChild(card)
+
+                })
+            })
+
     }
 
 }
