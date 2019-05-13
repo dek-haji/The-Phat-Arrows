@@ -24,6 +24,7 @@ const call = {
                     domBuilder.clearDOM()
                     domBuilder.createEventOutput()
                     domBuilder.createEventForm()
+                    this.eventCall()
                 })
 
         })
@@ -48,6 +49,7 @@ const call = {
                     domBuilder.clearDOM()
                     domBuilder.createNewsOutput()
                     domBuilder.createNewsForm()
+                    this.newsCall()
                 })
         })
     },
@@ -69,6 +71,7 @@ const call = {
                     domBuilder.clearDOM()
                     domBuilder.createTaskOutput()
                     domBuilder.createTaskForm()
+                    this.taskCall()
                 })
         })
     },
@@ -90,6 +93,7 @@ const call = {
                     domBuilder.clearDOM()
                     domBuilder.createMessageOutput()
                     domBuilder.createMessageForm()
+                    this.messageCall()
                 })
 
 

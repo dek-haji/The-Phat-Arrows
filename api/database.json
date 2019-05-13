@@ -132,6 +132,22 @@
       "article_published": "2019-05-16",
       "userId": "1",
       "id": 8
+    },
+    {
+      "article_title": "TEST",
+      "article_blurb": "TESTT",
+      "article_link": "TESTT",
+      "article_published": "2019-05-01",
+      "userId": "1",
+      "id": 9
+    },
+    {
+      "article_title": "ERST",
+      "article_blurb": "ETSE",
+      "article_link": "TT",
+      "article_published": "2019-05-16",
+      "userId": "1",
+      "id": 10
     }
   ],
   "tasks": [
@@ -140,13 +156,6 @@
       "userId": 1,
       "task_title": "This is a task title",
       "task_doneBy": "2030-07-14",
-      "task_completed": false
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "task_title": "TEST",
-      "task_doneBy": "2030-07-17",
       "task_completed": false
     },
     {
@@ -186,6 +195,20 @@
       "task_completed": false,
       "userId": "1",
       "id": 11
+    },
+    {
+      "task_title": "Do a thing",
+      "task_doneBy": "2019-05-15",
+      "task_completed": false,
+      "userId": "1",
+      "id": 12
+    },
+    {
+      "task_title": "Do another thing",
+      "task_doneBy": "2019-05-09",
+      "task_completed": false,
+      "userId": "1",
+      "id": 13
     }
   ],
   "events": [
@@ -202,13 +225,6 @@
       "event_name": "This is an event name",
       "event_details": "This is an even detail",
       "event_date": "2017-07-14"
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "event_name": "This is an event name",
-      "event_details": "This is an even detail",
-      "event_date": "2015-07-14"
     },
     {
       "id": 6,
