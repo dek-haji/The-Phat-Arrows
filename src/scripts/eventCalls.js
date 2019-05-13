@@ -56,8 +56,13 @@ const call = {
         let messageDate = document.querySelector("new--message--date")
         let messageTime = document.querySelector("new--message--time")
         console.log("Messages", messageContent, messageDate, messageTime)
-    })
-    }
+        const messageObj = {
+            message_content: messageContent,
+            message_Date: messageDate,
+            messageTime: messageTime
+        }
+        API.save(messagesUrl, messageObj)
+    })}
 }
 
 

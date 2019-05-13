@@ -176,6 +176,8 @@ news.addEventListener("click", function(e){
     output.innerHTML = ""
     output = document.querySelector("#taskOutput")
     output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
+    output.innerHTML = ""
     domBuilder.createNewsOutput()
     domBuilder.createNewsForm()
 })
@@ -186,6 +188,8 @@ events.addEventListener("click", function(e){
     output = document.querySelector("#eventOutput")
     output.innerHTML = ""
     output = document.querySelector("#taskOutput")
+    output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
     output.innerHTML = ""
     domBuilder.createEventOutput()
     domBuilder.createEventForm()
@@ -198,9 +202,24 @@ tasks.addEventListener("click", function(e){
     output.innerHTML = ""
     output = document.querySelector("#taskOutput")
     output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
+    output.innerHTML = ""
     domBuilder.createTaskOutput()
     domBuilder.createTaskForm()
     call.taskCall()
+})
+let messages = document.querySelector(".messages")
+messages.addEventListener("click", function(e){
+    let output = document.querySelector("#newsOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#eventOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#taskOutput")
+    output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
+    output.innerHTML = ""
+    domBuilder.createMessageOutput()
+    domBuilder.createMessageForm()
 })
 
 

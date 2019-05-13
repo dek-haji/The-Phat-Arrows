@@ -136,7 +136,7 @@ const domBuilder = {
         messageTime.setAttribute("type", "time")
 
     // append input fields to the form container
-        messageDiv.appendChild(messageName);
+        messageDiv.appendChild(messageContent);
         messageDiv.appendChild(messageDate);
         messageDiv.appendChild(messageTime);
         messageDiv.appendChild(saveMessage);
@@ -292,7 +292,7 @@ const domBuilder = {
                 })
             })
 
-    }
+    }, createMessageOutput() {console.log("message")}
 
 }
 
