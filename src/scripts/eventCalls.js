@@ -83,9 +83,9 @@ const call = {
             console.log(newDate)
             const messageObj = {
                 message_content: messageContent,
-                 date: newDate,
-                // time: messageTime,
-                userId: sessionStorage.getItem("session_user_id")
+                userId: sessionStorage.getItem("session_user_id"),
+                userName: sessionStorage.getItem("session_user_name"),
+                date: newDate
             }
             API.save(messagesUrl, messageObj)
                 .then(after => {
@@ -94,8 +94,6 @@ const call = {
                     domBuilder.createMessageForm()
                     this.messageCall()
                 })
-
-
         })
     }, addToFriendsList() {
         const addFriendMessage = document.querySelector(".add--friends")
