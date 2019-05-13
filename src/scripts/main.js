@@ -48,8 +48,10 @@ sign_in_btn.addEventListener("click", function (e) {
                 }
                 //If user is found, store their id in the session memory
                 else {
-                    let data = result[0].id
-                    sessionStorage.setItem("session_user_id", data)
+                    let sessionId = result[0].id
+                    let sessionName = result[0].user_name
+                    sessionStorage.setItem("session_user_name", sessionName)
+                    sessionStorage.setItem("session_user_id", sessionId)
                     //populate menu
                     sendUserHome()
                 }
@@ -95,8 +97,10 @@ sign_up_btn.addEventListener("click", function (e) {
                         .then(next => {
                             API.userLogin(username, password)
                                 .then(result => {
-                                    let data = result[0].id
-                                    sessionStorage.setItem("session_user_id", data)
+                                    let sessionId = result[0].id
+                                    let sessionName = result[0].user_name
+                                    sessionStorage.setItem("session_user_name", sessionName)
+                                    sessionStorage.setItem("session_user_id", sessionId)
                                     sendUserHome()
                                 })
                         })
@@ -164,7 +168,7 @@ log_out_btn.addEventListener("click", function (e) {
 })
 //ADD LISTENERS TO NAV BAR
 let news = document.querySelector(".news")
-news.addEventListener("click", function(e){
+news.addEventListener("click", function (e) {
     domBuilder.clearDOM()
     //Build the Output and input Form
     domBuilder.createNewsOutput()
@@ -173,7 +177,7 @@ news.addEventListener("click", function(e){
 
 })
 let events = document.querySelector(".events")
-events.addEventListener("click", function(e){
+events.addEventListener("click", function (e) {
     domBuilder.clearDOM()
     //Build the Output and input Form
     domBuilder.createEventOutput()
@@ -182,7 +186,7 @@ events.addEventListener("click", function(e){
 
 })
 let tasks = document.querySelector(".tasks")
-tasks.addEventListener("click", function(e){
+tasks.addEventListener("click", function (e) {
     domBuilder.clearDOM()
     //Build the Output and input Form
     domBuilder.createTaskOutput()
@@ -191,7 +195,7 @@ tasks.addEventListener("click", function(e){
 
 })
 let messages = document.querySelector(".messages")
-messages.addEventListener("click", function(e){
+messages.addEventListener("click", function (e) {
     domBuilder.clearDOM()
     //Build the Output and input Form
     domBuilder.createMessageOutput()

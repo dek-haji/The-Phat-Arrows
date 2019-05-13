@@ -86,7 +86,8 @@ const call = {
                 message_content: messageContent,
                 message_Date: messageDate,
                 messageTime: messageTime,
-                userId: sessionStorage.getItem("session_user_id")
+                userId: sessionStorage.getItem("session_user_id"),
+                userName: sessionStorage.getItem("session_user_name")
             }
             API.save(messagesUrl, messageObj)
                 .then(after => {

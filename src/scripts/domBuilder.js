@@ -296,6 +296,58 @@ const domBuilder = {
 
     }, createMessageOutput() {
         console.log("message")
+        var curr_id = sessionStorage.getItem("session_user_id")
+        console.log(curr_id)
+        API.getAll("http://localhost:3000/messages")
+            .then(messages => {
+                let newOrder = []
+                newOrder = messages.sort(function (a, b) {
+                    a = a.id;
+                    b = b.id;
+                    return a - b
+                })
+                newOrder.reverse()
+                newOrder.forEach(message => {
+                    let ID = message.id
+                    console.log(ID)
+                    //CREATE & POPULATE ELEMENTS
+                    let output = document.querySelector("#messageOutput")
+
+                    let card = document.createElement("div")
+                    card.classList.add("card")
+
+                    let name = document.createElement("h6")
+                    name.textContent = message.userName;
+                    card.appendChild(name)
+
+                    let timeStamp = document.createElement("p")
+                    timeStamp.textContent = message.date
+                    card.appendChild(timeStamp)
+
+                    let message_text = document.createElement("h6")
+                    message_text.textContent = message_text.message_content
+                    card.appendChild(message_text)
+
+                    //Only Show Remove (and edit) buttons if its your message
+                    if (curr_id == message.userId) {
+                        //ADD REMOVE BUTTON AND EVENT LISTENER
+                        let removeButton = document.createElement("button")
+                        //completedBox.setAttribute("type", "checkbox")
+                        removeButton.addEventListener("click", function (event) {
+                            //Remove from API/JSON
+                            API.delete("http://localhost:3000/messages", ID)
+                            //Remove from DOM
+                            let parent = card.parentNode
+                            parent.removeChild(card)
+                        })
+                        removeButton.textContent = "Remove My Message"
+                        removeButton.classList.add("btn-info")
+                        card.appendChild(removeButton)
+                    }
+                    output.appendChild(card)
+
+                })
+            })
     },
     clearDOM() {
         //Clear output divs

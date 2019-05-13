@@ -43,25 +43,11 @@
   ],
   "messages": [
     {
-      "id": 1,
-      "userId": 1,
-      "message_content": "Hey, I'm dead, yo",
-      "date": "2019-05-01",
-      "time": "23:59:59"
-    },
-    {
       "id": 2,
       "userId": 3,
       "message_content": "Yeah, well, I'm stuck on this damn wall",
       "date": "2019-05-01",
       "time": "23:50:56"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "message_content": "Dude, I have no head and you're bitching about a wall.",
-      "date": "2019-05-01",
-      "time": "24:40:59"
     },
     {
       "id": 4,
