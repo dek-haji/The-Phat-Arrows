@@ -150,6 +150,11 @@
       "task_title": "test",
       "task_doneBy": "2019-05-28",
       "id": 6
+    },
+    {
+      "task_title": "dek test",
+      "task_doneBy": "2019-05-07",
+      "id": 7
     }
   ],
   "events": [
@@ -180,6 +185,18 @@
       "event_name": "This is an event name",
       "event_details": "This is an even detail",
       "event_date": "2010-07-14"
+    },
+    {
+      "event_name": "",
+      "event_details": "",
+      "event_date": "",
+      "id": 7
+    },
+    {
+      "event_name": "dek",
+      "event_details": "dek",
+      "event_date": "2019-05-08",
+      "id": 8
     }
   ],
   "friends": [

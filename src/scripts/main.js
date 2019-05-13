@@ -226,6 +226,7 @@ events.addEventListener("click", function(e){
     //Build the Output and input Form
     domBuilder.createEventOutput()
     domBuilder.createEventForm()
+    call.eventCall()
 })
 let tasks = document.querySelector(".tasks")
 tasks.addEventListener("click", function(e){
