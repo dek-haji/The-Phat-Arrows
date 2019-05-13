@@ -166,10 +166,23 @@ log_out_btn.addEventListener("click", function (e) {
     output.innerHTML = ""
     output = document.querySelector("#taskOutput")
     output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
+    output.innerHTML = ""
+    //Clear input divs
+    let input = document.querySelector("#newsInput")
+    input.innerHTML = ""
+    input = document.querySelector("#eventInput")
+    input.innerHTML = ""
+    input = document.querySelector("#taskInput")
+    input.innerHTML = ""
+    input.innerHTML = document.querySelector("#messageInput")
+    input.innerHTML = ""
+
 })
 //ADD LISTENERS TO NAV BAR
 let news = document.querySelector(".news")
 news.addEventListener("click", function(e){
+    //clear output divs
     let output = document.querySelector("#newsOutput")
     output.innerHTML = ""
     output = document.querySelector("#eventOutput")
@@ -178,6 +191,16 @@ news.addEventListener("click", function(e){
     output.innerHTML = ""
     output.innerHTML = document.querySelector("#messageOutput")
     output.innerHTML = ""
+    //Clear input divs
+    let input = document.querySelector("#newsInput")
+    input.innerHTML = ""
+    input = document.querySelector("#eventInput")
+    input.innerHTML = ""
+    input = document.querySelector("#taskInput")
+    input.innerHTML = ""
+    input.innerHTML = document.querySelector("#messageInput")
+    input.innerHTML = ""
+    //Build the Output and input Form
     domBuilder.createNewsOutput()
     domBuilder.createNewsForm()
 })
@@ -191,6 +214,16 @@ events.addEventListener("click", function(e){
     output.innerHTML = ""
     output.innerHTML = document.querySelector("#messageOutput")
     output.innerHTML = ""
+    //Clear input divs
+    let input = document.querySelector("#newsInput")
+    input.innerHTML = ""
+    input = document.querySelector("#eventInput")
+    input.innerHTML = ""
+    input = document.querySelector("#taskInput")
+    input.innerHTML = ""
+    input.innerHTML = document.querySelector("#messageInput")
+    input.innerHTML = ""
+    //Build the Output and input Form
     domBuilder.createEventOutput()
     domBuilder.createEventForm()
 })
@@ -204,6 +237,16 @@ tasks.addEventListener("click", function(e){
     output.innerHTML = ""
     output.innerHTML = document.querySelector("#messageOutput")
     output.innerHTML = ""
+    //Clear input divs
+    let input = document.querySelector("#newsInput")
+    input.innerHTML = ""
+    input = document.querySelector("#eventInput")
+    input.innerHTML = ""
+    input = document.querySelector("#taskInput")
+    input.innerHTML = ""
+    input.innerHTML = document.querySelector("#messageInput")
+    input.innerHTML = ""
+    //Build the Output and input Form
     domBuilder.createTaskOutput()
     domBuilder.createTaskForm()
     call.taskCall()
@@ -218,6 +261,16 @@ messages.addEventListener("click", function(e){
     output.innerHTML = ""
     output.innerHTML = document.querySelector("#messageOutput")
     output.innerHTML = ""
+    //Clear input divs
+    let input = document.querySelector("#newsInput")
+    input.innerHTML = ""
+    input = document.querySelector("#eventInput")
+    input.innerHTML = ""
+    input = document.querySelector("#taskInput")
+    input.innerHTML = ""
+    input.innerHTML = document.querySelector("#messageInput")
+    input.innerHTML = ""
+    //Build the Output and input Form
     domBuilder.createMessageOutput()
     domBuilder.createMessageForm()
 })
