@@ -2,6 +2,7 @@
 import API from "./dataFetch"
 import domBuilder from "./domBuilder";
 import dataFetch from "./dataFetch";
+import call from "./eventCalls";
 
 
 const taskUrl = "http://localhost:3000/tasks";
@@ -13,6 +14,10 @@ const eventsUrl = "http://localhost:3000/events";
 
 const sign_in_btn = document.querySelector("#sign-in-btn")
 const sign_up_btn = document.querySelector("#sign-up-btn")
+//call.eventCall()
+//call.newscall()
+//call.taskCall()
+//call.messageCall()
 
 const log_out_btn = document.querySelector(".logout")
 
@@ -171,7 +176,10 @@ news.addEventListener("click", function(e){
     output.innerHTML = ""
     output = document.querySelector("#taskOutput")
     output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
+    output.innerHTML = ""
     domBuilder.createNewsOutput()
+    domBuilder.createNewsForm()
 })
 let events = document.querySelector(".events")
 events.addEventListener("click", function(e){
@@ -181,7 +189,10 @@ events.addEventListener("click", function(e){
     output.innerHTML = ""
     output = document.querySelector("#taskOutput")
     output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
+    output.innerHTML = ""
     domBuilder.createEventOutput()
+    domBuilder.createEventForm()
 })
 let tasks = document.querySelector(".tasks")
 tasks.addEventListener("click", function(e){
@@ -191,7 +202,24 @@ tasks.addEventListener("click", function(e){
     output.innerHTML = ""
     output = document.querySelector("#taskOutput")
     output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
+    output.innerHTML = ""
     domBuilder.createTaskOutput()
+    domBuilder.createTaskForm()
+    call.taskCall()
+})
+let messages = document.querySelector(".messages")
+messages.addEventListener("click", function(e){
+    let output = document.querySelector("#newsOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#eventOutput")
+    output.innerHTML = ""
+    output = document.querySelector("#taskOutput")
+    output.innerHTML = ""
+    output.innerHTML = document.querySelector("#messageOutput")
+    output.innerHTML = ""
+    domBuilder.createMessageOutput()
+    domBuilder.createMessageForm()
 })
 
 

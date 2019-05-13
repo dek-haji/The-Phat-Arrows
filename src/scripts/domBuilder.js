@@ -1,4 +1,5 @@
 import API from "./dataFetch";
+import call from "./eventCalls";
 
 const domBuilder = {
 
@@ -35,7 +36,7 @@ const domBuilder = {
 
         // define input attributes
         newEventName.setAttribute("type", "text");
-        newEventDate.setAttribute("type", "datetime-local");
+        newEventDate.setAttribute("type", "date");
         newEventLocation.setAttribute("type", "text");
 
         // append input fields to the form container
@@ -54,13 +55,15 @@ const domBuilder = {
         let newsName = document.createElement("input");
         let newsSynopsis = document.createElement("input");
         let newsURL = document.createElement("input");
+        let publishDate = document.createElement("input");
         let saveNewsButton = document.createElement("button");
 
         // add class to form container
         newsDiv.classList.add("add--news--form");
         newsName.classList.add("new--news--name");
         newsSynopsis.classList.add("new--news--synopsis");
-        newsURL.classList.add("new--news--url")
+        newsURL.classList.add("new--news--url");
+        publishDate.classList.add("new--publish--date");
         saveNewsButton.classList.add("task--news--button");
 
         // add text to button
@@ -70,18 +73,20 @@ const domBuilder = {
         newsName.setAttribute("type", "text")
         newsSynopsis.setAttribute("type", "text")
         newsURL.setAttribute("type", "href")
+        publishDate.setAttribute("type", "date")
 
         // append input fields to the form container
         newsDiv.appendChild(newsName);
         newsDiv.appendChild(newsSynopsis);
         newsDiv.appendChild(newsURL);
-        newsDiv.appendChild(saveNewsButton)
+        newsDiv.appendChild(publishDate);
+        newsDiv.appendChild(saveNewsButton);
 
         // append form container to event container (temporarily)
         newsContainer.appendChild(newsDiv);
     },
     createTaskForm() {
-        let taskContainer = document.getElementById("taskInput")
+        let taskContainer = document.getElementById("taskInput");
         let taskDiv = document.createElement("div");
         let taskName = document.createElement("input");
         let taskCompletion = document.createElement("input");
@@ -91,12 +96,13 @@ const domBuilder = {
         taskDiv.classList.add("add--task--form");
         taskName.classList.add("new--task--name");
         taskCompletion.classList.add("new--task--completion");
+        saveTask.classList.add("save--task");
         // add text to button
         saveTask.textContent = "save task"
 
         // // define input attributes
         taskName.setAttribute("type", "text")
-        taskCompletion.setAttribute("type", "text")
+        taskCompletion.setAttribute("type", "date")
 
         // append input fields to the form container
         taskDiv.appendChild(taskName);
@@ -106,6 +112,38 @@ const domBuilder = {
         // append form container to event container (temporarily)
         taskContainer.appendChild(taskDiv)
     },
+    createMessageForm() {
+        let messageContainer = document.getElementById("taskInput");
+        let messageDiv = document.createElement("div");
+        let messageContent = document.createElement("input");
+        let messageDate = document.createElement("input");
+        let messageTime = document.createElement("input");
+        let saveMessage = document.createElement("button")
+
+    // add class to form container
+        messageDiv.classList.add("add--message--form");
+        messageContent.classList.add("new--message--content");
+        messageDate.classList.add("new--message--date");
+        messageTime.classList.add("new--message--time");
+        saveMessage.classList.add("save--message");
+
+    // add text to button
+        saveMessage.textContent = "save message"
+
+    //define input attributes
+        messageContent.setAttribute("type", "text")
+        messageDate.setAttribute("type", "date")
+        messageTime.setAttribute("type", "time")
+
+    // append input fields to the form container
+        messageDiv.appendChild(messageContent);
+        messageDiv.appendChild(messageDate);
+        messageDiv.appendChild(messageTime);
+        messageDiv.appendChild(saveMessage);
+    // append form container to event container (temporarily)
+        messageContainer.appendChild(messageDiv)
+    },
+
     createEventOutput() {
         //GET DATA
         var curr_id = sessionStorage.getItem("session_user_id")
@@ -254,7 +292,7 @@ const domBuilder = {
                 })
             })
 
-    }
+    }, createMessageOutput() {console.log("message")}
 
 }
 

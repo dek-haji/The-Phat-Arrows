@@ -1,33 +1,37 @@
-# Browserify Boilerplate Repository
+# Nutshell 
+Time to leave the Book of Faces to the Baby Boomers and the Russians. Nutshell is the NEXT GEN social media platform.
 
-Use this repository for when you want to start a new modular JavaScript application that gets compiled by Browserify. You start off with three JavaScript modules in the `src/scripts` directory.
+Soon to feature cryptocurrency micro payments, and cross border gambling.
 
-1. `hello.js` - Exports a simple function that says hello
-1. `goodbye.js` - Exports a simple function that says goodbye
-1. `sandwichMaker.js` - Exports an object with a single method named `placeOrder()`
-1. `main.js` - Contains the logic of your application. It imports the other three modules, and invokes all of the functions.
+![alt text](public/images/Nutshell.png)
 
-## Prerequisites for Everyone
+## Developed by THE => PHAT => ARROWS
+- Jason Brooks (King of the North, Lead Dev)
+- Josh Webb (Spiritual Leader, Social Media SME)
+- Dek Haji (Commander of the Northern Forces, JS Guru)
+- Ken Dixon (Maester of the Databases)
 
-Run this first
-
-```sh
-npm i -g cross-env
+### Setup Nutshell
+1. Clone the browserify-boilerplate repo.
+2. Do not touch the .gitignore file that's there. It has everything you need.
+3. git remote remove origin.
+4. git remote add origin paste_your_nutshell_repo_string_here.
+5. git push origin master.
+6. In Terminal navigate to src/lib. 
+7. Run Browserify.
+```
+ $ npm install
+ ```
+8. Run Grunt.
+```
+$ grunt
 ```
 
-## Project Setup
+### Assignment Professional Requirements
+1. All teammates must be using Grunt to run ESLint and Browserify during development
+2. Each module should have a comment at the top with the following info: author(s) and purpose of module
+3. The README for your project should include instructions on how another person can download and run the application
 
-1. Clone this repository.
-1. `cd browserify-boilerplate/src/lib`
-1. `npm install`
-1. `npm start`
 
-The `npm start` command will run grunt for you.
-
-The web server will be started, and the JavaScript code in the `src/scripts` directory will be compiled into `public/bundle.js`.
-
-1. Open Chome and make sure your developer tools are open.
-1. Open [http://localhost:8080](http://localhost:8080) in your browser.
-1. You should see the following output in the console.
-
-![sample boilerplate output](./browserify-boilerplate-output.png)
+### Database Diagram
+![alt text](public/images/DBDiagram.png)

@@ -86,7 +86,7 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2015-07-14"
+      "article_published": "2011-07-15"
     },
     {
       "id": 3,
@@ -102,7 +102,14 @@
       "article_title": "This is an article title",
       "article_blurb": "This is an article blurd",
       "article_link": "https://news.link.com",
-      "article_published": "2011-07-11"
+      "article_published": "2011-07-17"
+    },
+    {
+      "article_title": "Test 1",
+      "article_blurb": "Test 2",
+      "article_link": "Test 3",
+      "article_published": "2019-05-08",
+      "id": 5
     }
   ],
   "tasks": [
@@ -117,15 +124,32 @@
       "id": 2,
       "userId": 1,
       "task_title": "This is a task title",
-      "task_doneBy": "2030-07-14",
+      "task_doneBy": "2030-07-15",
       "task_completed": false
     },
     {
       "id": 3,
       "userId": 1,
       "task_title": "This is a task title",
-      "task_doneBy": "2030-07-14",
+      "task_doneBy": "2030-07-16",
       "task_completed": false
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "task_title": "This is a task title",
+      "task_doneBy": "2030-07-17",
+      "task_completed": false
+    },
+    {
+      "task_title": "test",
+      "task_doneBy": "2019-05-09",
+      "id": 5
+    },
+    {
+      "task_title": "test",
+      "task_doneBy": "2019-05-28",
+      "id": 6
     }
   ],
   "events": [
