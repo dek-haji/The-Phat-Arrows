@@ -119,29 +119,23 @@ const domBuilder = {
         let messageContainer = document.getElementById("taskInput");
         let messageDiv = document.createElement("div");
         let messageContent = document.createElement("input");
-        let messageDate = document.createElement("input");
-        let messageTime = document.createElement("input");
+        // let messageDate = document.createElement("input");
+        // let messageTime = document.createElement("input");
         let saveMessage = document.createElement("button")
 
         // add class to form container
         messageDiv.classList.add("add--message--form");
         messageContent.classList.add("new--message--content");
-        messageDate.classList.add("new--message--date");
-        messageTime.classList.add("new--message--time");
         saveMessage.classList.add("save--message");
 
         // add text to button
         saveMessage.textContent = "save message"
 
         //define input attributes
-        messageContent.setAttribute("type", "text")
-        messageDate.setAttribute("type", "date")
-        messageTime.setAttribute("type", "time")
+        messageContent.setAttribute("type", "text");
 
         // append input fields to the form container
         messageDiv.appendChild(messageContent);
-        messageDiv.appendChild(messageDate);
-        messageDiv.appendChild(messageTime);
         messageDiv.appendChild(saveMessage);
         // append form container to event container (temporarily)
         messageContainer.appendChild(messageDiv)
@@ -180,6 +174,7 @@ const domBuilder = {
                     card.appendChild(date)
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
+                    let editEvents = document.createElement("button")
                     removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
                         API.delete("http://localhost:3000/events", ID)
@@ -187,9 +182,14 @@ const domBuilder = {
                         let parent = card.parentNode
                         parent.removeChild(card)
                     })
+                    editEvents.addEventListener("click", (e)=> {
+                        console.log(e)
+                    })
                     removeButton.textContent = "REMOVE"
+                    editEvents.textContent = "EDIT"
                     removeButton.classList.add("btn-outline-success")
                     card.appendChild(removeButton)
+                    card.appendChild(editEvents)
 
                     output.appendChild(card)
 
@@ -233,6 +233,7 @@ const domBuilder = {
 
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
+                    let editNews = document.createElement("button")
                     removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
                         API.delete("http://localhost:3000/articles", ID)
@@ -241,9 +242,12 @@ const domBuilder = {
                         parent.removeChild(card)
                     })
                     removeButton.textContent = "REMOVE"
+                    editNews.textContent = "EDIT"
                     removeButton.classList.add("btn-outline-success")
                     card.appendChild(removeButton)
+                    card.appendChild(editNews)
                     output.appendChild(card)
+
 
                 })
             })
@@ -277,6 +281,7 @@ const domBuilder = {
 
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
+                    let editTask = document.createElement("button")
                     //completedBox.setAttribute("type", "checkbox")
                     removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
@@ -285,10 +290,15 @@ const domBuilder = {
                         let parent = card.parentNode
                         parent.removeChild(card)
                     })
-                    removeButton.textContent = "Mark as Complete"
+
+
+
+
+                    removeButton.textContent = "Mark as Complete";
+                    editTask.textContent = "EDIT"
                     removeButton.classList.add("btn-outline-success")
                     card.appendChild(removeButton)
-
+                    card.appendChild(editTask)
                     output.appendChild(card)
 
                 })
@@ -315,21 +325,26 @@ const domBuilder = {
 
                     let card = document.createElement("div")
                     card.classList.add("card")
+                    card.classList.add("border-info")
 
-                    let name = document.createElement("h6")
+                    let name = document.createElement("h5")
                     name.textContent = message.userName;
                     card.appendChild(name)
+                    name.classList.add("card-header")
+
+                    let message_text = document.createElement("p")
+                    message_text.textContent = message.message_content
+                    card.appendChild(message_text)
+                    name.classList.add("card-body")
 
                     let timeStamp = document.createElement("p")
                     timeStamp.textContent = message.date
                     card.appendChild(timeStamp)
 
-                    let message_text = document.createElement("h6")
-                    message_text.textContent = message_text.message_content
-                    card.appendChild(message_text)
-
                     //Only Show Remove (and edit) buttons if its your message
                     if (curr_id == message.userId) {
+                        card.classList.add("bg-info")
+                        card.classList.add("text-white")
                         //ADD REMOVE BUTTON AND EVENT LISTENER
                         let removeButton = document.createElement("button")
                         //completedBox.setAttribute("type", "checkbox")
@@ -343,6 +358,11 @@ const domBuilder = {
                         removeButton.textContent = "Remove My Message"
                         removeButton.classList.add("btn-info")
                         card.appendChild(removeButton)
+                        //ADD EDIT BUTTON and event listener
+                        let editMessage = document.createElement("button")
+                        editMessage.textContent = "Edit My Message"
+                        removeButton.classList.add("btn-warning")
+                        card.appendChild(editMessage)
                     }
                     output.appendChild(card)
 

@@ -43,18 +43,46 @@
   ],
   "messages": [
     {
-      "id": 2,
-      "userId": 3,
-      "message_content": "Yeah, well, I'm stuck on this damn wall",
-      "date": "2019-05-01",
-      "time": "23:50:56"
+      "message_content": "I <3 Direwolves and Honesty",
+      "userId": "1",
+      "userName": "Ned Stark",
+      "date": "2014-05-13T20:06:50.620Z",
+      "id": 1
     },
     {
-      "id": 4,
-      "userId": 3,
-      "message_content": "YOU'RE NOT MY REAL DAD!",
-      "date": "2019-05-01",
-      "time": "19:14:59"
+      "message_content": "I also <3 Direwolves and Honesty",
+      "userId": "3",
+      "userName": "Jon Snow",
+      "date": "2014-05-13T20:06:50.620Z",
+      "id": 2
+    },
+    {
+      "message_content": "I like metal. Heavy metal",
+      "userId": "5",
+      "userName": "Gendry",
+      "date": "2015-06-13T20:06:50.620Z",
+      "id": 3
+    },
+    {
+      "message_content": "I has dragons",
+      "userId": "4",
+      "userName": "Daenerys Targaryen",
+      "date": "2016-05-13T20:06:50.620Z",
+      "id": 4
+    },
+    {
+      "message_content": "Immm the King of the north!",
+      "userId": "7",
+      "userName": "Rob Stark",
+      "date": "2017-05-13T20:06:50.620Z",
+      "id": 7
+    },
+    {
+      "message_content": "I will see all of you soon!",
+      "userId": "1",
+      "userName": "Ned Stark",
+      "date": "2018-05-13T20:28:52.466Z",
+      "id": 8
     }
   ],
   "articles": [
@@ -128,12 +156,20 @@
       "id": 9
     },
     {
-      "article_title": "ERST",
-      "article_blurb": "ETSE",
-      "article_link": "TT",
-      "article_published": "2019-05-16",
+      "article_title": "Halla",
+      "article_blurb": "yaa ahlu raabi",
+      "article_link": "hahha",
+      "article_published": "2019-05-15",
       "userId": "1",
       "id": 10
+    },
+    {
+      "article_title": "low ",
+      "article_blurb": "high",
+      "article_link": "medium",
+      "article_published": "2019-05-14",
+      "userId": "1",
+      "id": 11
     }
   ],
   "tasks": [
@@ -195,6 +231,13 @@
       "task_completed": false,
       "userId": "1",
       "id": 13
+    },
+    {
+      "task_title": "who let the dog out",
+      "task_doneBy": "2019-05-14",
+      "task_completed": false,
+      "userId": "1",
+      "id": 14
     }
   ],
   "events": [
@@ -249,6 +292,13 @@
       "event_date": "2019-05-24",
       "userId": "1",
       "id": 11
+    },
+    {
+      "event_name": "yoooooow",
+      "event_details": "whats up",
+      "event_date": "2019-05-07",
+      "userId": "1",
+      "id": 12
     }
   ],
   "friends": [
