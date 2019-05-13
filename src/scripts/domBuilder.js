@@ -49,6 +49,9 @@ const domBuilder = {
         eventContainer.appendChild(newEventDiv);
 
     },
+    eventEditForm(){
+
+    },
     createNewsForm() {
         let newsContainer = document.getElementById("newsInput");
         // create form HTML elements
@@ -227,7 +230,7 @@ const domBuilder = {
                     blurb.textContent = article.article_blurb
                     card.appendChild(blurb)
 
-                    let url = document.createElement("p")
+                    let url = document.createElement("a")
                     url.textContent = article.article_link
                     card.appendChild(url)
 
@@ -329,5 +332,6 @@ const domBuilder = {
     }
 
 }
+
 
 export default domBuilder
