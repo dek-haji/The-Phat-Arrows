@@ -98,7 +98,22 @@ const call = {
 
 
         })
-    }
+    }, addToFriendsList() {
+        const addFriendMessage = document.querySelector(".add--friends")
+        addFriendMessage.addEventListener("click", (friendUser) => {
+            API.getOne (messagesUrl, userId)
+            .then(result => {
+                console.log(result)
+                let newUser = result;
+                curr_id = sessionStorage.getItem("session_user_id")
+                const friendListObj = {
+                    userId: curr_id,
+                    otherFriendsId: newUser
+                    }
+                    API.save(friendsListUrl, friendListObj);
+            })
+        })
+    } 
 }
 
 
