@@ -306,6 +306,68 @@ const domBuilder = {
 
     }, createMessageOutput() {
         console.log("message")
+        var curr_id = sessionStorage.getItem("session_user_id")
+        console.log(curr_id)
+        API.getAll("http://localhost:3000/messages")
+            .then(messages => {
+                let newOrder = []
+                newOrder = messages.sort(function (a, b) {
+                    a = a.id;
+                    b = b.id;
+                    return a - b
+                })
+                newOrder.reverse()
+                newOrder.forEach(message => {
+                    let ID = message.id
+                    console.log(ID)
+                    //CREATE & POPULATE ELEMENTS
+                    let output = document.querySelector("#messageOutput")
+
+                    let card = document.createElement("div")
+                    card.classList.add("card")
+                    card.classList.add("border-info")
+
+                    let name = document.createElement("h5")
+                    name.textContent = message.userName;
+                    card.appendChild(name)
+                    name.classList.add("card-header")
+
+                    let message_text = document.createElement("p")
+                    message_text.textContent = message.message_content
+                    card.appendChild(message_text)
+                    name.classList.add("card-body")
+
+                    let timeStamp = document.createElement("p")
+                    timeStamp.textContent = message.date
+                    card.appendChild(timeStamp)
+
+                    //Only Show Remove (and edit) buttons if its your message
+                    if (curr_id == message.userId) {
+                        card.classList.add("bg-info")
+                        card.classList.add("text-white")
+                        //ADD REMOVE BUTTON AND EVENT LISTENER
+                        let removeButton = document.createElement("button")
+                        //completedBox.setAttribute("type", "checkbox")
+                        removeButton.addEventListener("click", function (event) {
+                            //Remove from API/JSON
+                            API.delete("http://localhost:3000/messages", ID)
+                            //Remove from DOM
+                            let parent = card.parentNode
+                            parent.removeChild(card)
+                        })
+                        removeButton.textContent = "Remove My Message"
+                        removeButton.classList.add("btn-info")
+                        card.appendChild(removeButton)
+                        //ADD EDIT BUTTON and event listener
+                        let editMessage = document.createElement("button")
+                        editMessage.textContent = "Edit My Message"
+                        removeButton.classList.add("btn-warning")
+                        card.appendChild(editMessage)
+                    }
+                    output.appendChild(card)
+
+                })
+            })
     },
     clearDOM() {
         //Clear output divs

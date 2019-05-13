@@ -43,62 +43,46 @@
   ],
   "messages": [
     {
-      "id": 1,
-      "userId": 1,
-      "message_content": "Hey, I'm dead, yo",
-      "date": "2019-05-01",
-      "time": "23:59:59"
-    },
-    {
-      "id": 2,
-      "userId": 3,
-      "message_content": "Yeah, well, I'm stuck on this damn wall",
-      "date": "2019-05-01",
-      "time": "23:50:56"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "message_content": "Dude, I have no head and you're bitching about a wall.",
-      "date": "2019-05-01",
-      "time": "24:40:59"
-    },
-    {
-      "message_content": null,
-      "date": null,
-      "time": null,
+      "message_content": "I <3 Direwolves and Honesty",
       "userId": "1",
+      "userName": "Ned Stark",
+      "date": "2014-05-13T20:06:50.620Z",
+      "id": 1
+    },
+    {
+      "message_content": "I also <3 Direwolves and Honesty",
+      "userId": "3",
+      "userName": "Jon Snow",
+      "date": "2014-05-13T20:06:50.620Z",
+      "id": 2
+    },
+    {
+      "message_content": "I like metal. Heavy metal",
+      "userId": "5",
+      "userName": "Gendry",
+      "date": "2015-06-13T20:06:50.620Z",
+      "id": 3
+    },
+    {
+      "message_content": "I has dragons",
+      "userId": "4",
+      "userName": "Daenerys Targaryen",
+      "date": "2016-05-13T20:06:50.620Z",
       "id": 4
     },
     {
-      "message_content": "hahahha",
-      "date": "2019-05-14",
-      "time": "00:12",
-      "userId": "1",
-      "id": 5
-    },
-    {
-      "message_content": "gergter",
-      "userId": "1",
-      "id": 6
-    },
-    {
-      "message_content": "yooooooow",
-      "date": "2019-05-13T19:06:28.265Z",
-      "userId": "1",
+      "message_content": "Immm the King of the north!",
+      "userId": "7",
+      "userName": "Rob Stark",
+      "date": "2017-05-13T20:06:50.620Z",
       "id": 7
     },
     {
-      "message_content": "haahah",
-      "date": "2019-05-13T19:40:04.130Z",
+      "message_content": "I will see all of you soon!",
       "userId": "1",
+      "userName": "Ned Stark",
+      "date": "2018-05-13T20:28:52.466Z",
       "id": 8
-    },
-    {
-      "message_content": "tyrte",
-      "date": "2019-05-13T19:42:43.867Z",
-      "userId": "1",
-      "id": 9
     }
   ],
   "articles": [
