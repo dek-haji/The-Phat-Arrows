@@ -110,6 +110,28 @@
       "article_link": "Test 3",
       "article_published": "2019-05-08",
       "id": 5
+    },
+    {
+      "article_title": "CRAZY NEWS HEADLINE",
+      "article_blurb": "blubvuweb",
+      "article_link": "link.com",
+      "article_published": "2019-05-02",
+      "id": 6
+    },
+    {
+      "article_title": "TEST TITLE",
+      "article_blurb": "BLURRRD",
+      "article_link": "LURNK",
+      "article_published": "2019-05-18",
+      "id": 7
+    },
+    {
+      "article_title": "sdfsdfsdfds",
+      "article_blurb": "sdfsdfsdfsdfsdfdsfsd",
+      "article_link": "sdfsdfsdfsdfsdf",
+      "article_published": "2019-05-16",
+      "userId": "1",
+      "id": 8
     }
   ],
   "tasks": [
@@ -121,35 +143,49 @@
       "task_completed": false
     },
     {
-      "id": 2,
+      "id": 5,
       "userId": 1,
-      "task_title": "This is a task title",
-      "task_doneBy": "2030-07-15",
-      "task_completed": false
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "task_title": "This is a task title",
-      "task_doneBy": "2030-07-16",
-      "task_completed": false
-    },
-    {
-      "id": 4,
-      "userId": 1,
-      "task_title": "This is a task title",
+      "task_title": "TEST",
       "task_doneBy": "2030-07-17",
       "task_completed": false
     },
     {
-      "task_title": "test",
-      "task_doneBy": "2019-05-09",
-      "id": 5
+      "task_title": "TRY2SAVE",
+      "task_doneBy": "2019-05-08",
+      "id": 6
     },
     {
-      "task_title": "test",
-      "task_doneBy": "2019-05-28",
-      "id": 6
+      "task_title": "TEST2",
+      "task_doneBy": "2019-05-15",
+      "id": 7
+    },
+    {
+      "task_title": "TESTTEST",
+      "task_doneBy": "2019-05-16",
+      "task_completed": false,
+      "userId": "1",
+      "id": 8
+    },
+    {
+      "task_title": "SDJFSDFDSGSDG",
+      "task_doneBy": "2019-05-09",
+      "task_completed": false,
+      "userId": "1",
+      "id": 9
+    },
+    {
+      "task_title": "PLEASE BE TRUE",
+      "task_doneBy": "2019-05-10",
+      "task_completed": false,
+      "userId": "1",
+      "id": 10
+    },
+    {
+      "task_title": "Dont get Head Removed",
+      "task_doneBy": "2019-05-25",
+      "task_completed": false,
+      "userId": "1",
+      "id": 11
     }
   ],
   "events": [
@@ -180,6 +216,37 @@
       "event_name": "This is an event name",
       "event_details": "This is an even detail",
       "event_date": "2010-07-14"
+    },
+    {
+      "event_name": "Walking to Kings Landing",
+      "event_details": "Winter is coming yo",
+      "event_date": "2019-05-25",
+      "id": 7
+    },
+    {
+      "event_name": "Walking south",
+      "event_details": "Winter is coming",
+      "event_date": "2019-05-01",
+      "id": 8
+    },
+    {
+      "event_name": "TESTES",
+      "event_details": "TESTE",
+      "event_date": "2019-05-08",
+      "id": 9
+    },
+    {
+      "event_name": "Walk to Kings Landing",
+      "event_details": "Winter is coming",
+      "event_date": "2019-05-08",
+      "id": 10
+    },
+    {
+      "event_name": "Walk to Kings Landing",
+      "event_details": "Winter is coming",
+      "event_date": "2019-05-24",
+      "userId": "1",
+      "id": 11
     }
   ],
   "friends": [

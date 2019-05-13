@@ -47,6 +47,7 @@ const domBuilder = {
 
         // append form container to event container (temporarily)
         eventContainer.appendChild(newEventDiv);
+
     },
     createNewsForm() {
         let newsContainer = document.getElementById("newsInput");
@@ -84,6 +85,7 @@ const domBuilder = {
 
         // append form container to event container (temporarily)
         newsContainer.appendChild(newsDiv);
+
     },
     createTaskForm() {
         let taskContainer = document.getElementById("taskInput");
@@ -111,6 +113,7 @@ const domBuilder = {
 
         // append form container to event container (temporarily)
         taskContainer.appendChild(taskDiv)
+
     },
     createMessageForm() {
         let messageContainer = document.getElementById("taskInput");
@@ -120,28 +123,29 @@ const domBuilder = {
         let messageTime = document.createElement("input");
         let saveMessage = document.createElement("button")
 
-    // add class to form container
+        // add class to form container
         messageDiv.classList.add("add--message--form");
         messageContent.classList.add("new--message--content");
         messageDate.classList.add("new--message--date");
         messageTime.classList.add("new--message--time");
         saveMessage.classList.add("save--message");
 
-    // add text to button
+        // add text to button
         saveMessage.textContent = "save message"
 
-    //define input attributes
+        //define input attributes
         messageContent.setAttribute("type", "text")
         messageDate.setAttribute("type", "date")
         messageTime.setAttribute("type", "time")
 
-    // append input fields to the form container
+        // append input fields to the form container
         messageDiv.appendChild(messageContent);
         messageDiv.appendChild(messageDate);
         messageDiv.appendChild(messageTime);
         messageDiv.appendChild(saveMessage);
-    // append form container to event container (temporarily)
+        // append form container to event container (temporarily)
         messageContainer.appendChild(messageDiv)
+
     },
 
     createEventOutput() {
@@ -150,7 +154,7 @@ const domBuilder = {
         API.getAll(`http://localhost:3000/events?userId=${curr_id}`)
             .then(events => {
                 let newOrder = []
-                newOrder = events.sort(function(a, b){
+                newOrder = events.sort(function (a, b) {
                     a = a.event_date.split("-").join("");
                     b = b.event_date.split("-").join("");
                     return a - b
@@ -176,7 +180,7 @@ const domBuilder = {
                     card.appendChild(date)
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
-                    removeButton.addEventListener("click", function(event){
+                    removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
                         API.delete("http://localhost:3000/events", ID)
                         //Remove from DOM
@@ -198,7 +202,7 @@ const domBuilder = {
         API.getAll(`http://localhost:3000/articles?userId=${curr_id}`)
             .then(articles => {
                 let newOrder = []
-                newOrder = articles.sort(function(a, b){
+                newOrder = articles.sort(function (a, b) {
                     a = a.article_published.split("-").join("");
                     b = b.article_published.split("-").join("");
                     return a - b
@@ -229,7 +233,7 @@ const domBuilder = {
 
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
-                    removeButton.addEventListener("click", function(event){
+                    removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
                         API.delete("http://localhost:3000/articles", ID)
                         //Remove from DOM
@@ -239,8 +243,6 @@ const domBuilder = {
                     removeButton.textContent = "REMOVE"
                     removeButton.classList.add("btn-outline-success")
                     card.appendChild(removeButton)
-
-
                     output.appendChild(card)
 
                 })
@@ -252,7 +254,7 @@ const domBuilder = {
         API.getAll(`http://localhost:3000/tasks?userId=${curr_id}`)
             .then(tasks => {
                 let newOrder = []
-                newOrder = tasks.sort(function(a, b){
+                newOrder = tasks.sort(function (a, b) {
                     a = a.task_doneBy.split("-").join("");
                     b = b.task_doneBy.split("-").join("");
                     return a - b
@@ -276,7 +278,7 @@ const domBuilder = {
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
                     //completedBox.setAttribute("type", "checkbox")
-                    removeButton.addEventListener("click", function(event){
+                    removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
                         API.delete("http://localhost:3000/tasks", ID)
                         //Remove from DOM
@@ -292,7 +294,29 @@ const domBuilder = {
                 })
             })
 
-    }, createMessageOutput() {console.log("message")}
+    }, createMessageOutput() {
+        console.log("message")
+    },
+    clearDOM() {
+        //Clear output divs
+        let output = document.querySelector("#newsOutput")
+        output.innerHTML = ""
+        output = document.querySelector("#eventOutput")
+        output.innerHTML = ""
+        output = document.querySelector("#taskOutput")
+        output.innerHTML = ""
+        output.innerHTML = document.querySelector("#messageOutput")
+        output.innerHTML = ""
+        //Clear input divs
+        let input = document.querySelector("#newsInput")
+        input.innerHTML = ""
+        input = document.querySelector("#eventInput")
+        input.innerHTML = ""
+        input = document.querySelector("#taskInput")
+        input.innerHTML = ""
+        input.innerHTML = document.querySelector("#messageInput")
+        input.innerHTML = ""
+    }
 
 }
 
