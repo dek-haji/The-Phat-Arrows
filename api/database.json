@@ -64,11 +64,41 @@
       "time": "24:40:59"
     },
     {
-      "id": 4,
-      "userId": 3,
-      "message_content": "YOU'RE NOT MY REAL DAD!",
-      "date": "2019-05-01",
-      "time": "19:14:59"
+      "message_content": null,
+      "date": null,
+      "time": null,
+      "userId": "1",
+      "id": 4
+    },
+    {
+      "message_content": "hahahha",
+      "date": "2019-05-14",
+      "time": "00:12",
+      "userId": "1",
+      "id": 5
+    },
+    {
+      "message_content": "gergter",
+      "userId": "1",
+      "id": 6
+    },
+    {
+      "message_content": "yooooooow",
+      "date": "2019-05-13T19:06:28.265Z",
+      "userId": "1",
+      "id": 7
+    },
+    {
+      "message_content": "haahah",
+      "date": "2019-05-13T19:40:04.130Z",
+      "userId": "1",
+      "id": 8
+    },
+    {
+      "message_content": "tyrte",
+      "date": "2019-05-13T19:42:43.867Z",
+      "userId": "1",
+      "id": 9
     }
   ],
   "articles": [
@@ -142,12 +172,20 @@
       "id": 9
     },
     {
-      "article_title": "ERST",
-      "article_blurb": "ETSE",
-      "article_link": "TT",
-      "article_published": "2019-05-16",
+      "article_title": "Halla",
+      "article_blurb": "yaa ahlu raabi",
+      "article_link": "hahha",
+      "article_published": "2019-05-15",
       "userId": "1",
       "id": 10
+    },
+    {
+      "article_title": "low ",
+      "article_blurb": "high",
+      "article_link": "medium",
+      "article_published": "2019-05-14",
+      "userId": "1",
+      "id": 11
     }
   ],
   "tasks": [
@@ -209,6 +247,13 @@
       "task_completed": false,
       "userId": "1",
       "id": 13
+    },
+    {
+      "task_title": "who let the dog out",
+      "task_doneBy": "2019-05-14",
+      "task_completed": false,
+      "userId": "1",
+      "id": 14
     }
   ],
   "events": [
@@ -263,6 +308,13 @@
       "event_date": "2019-05-24",
       "userId": "1",
       "id": 11
+    },
+    {
+      "event_name": "yoooooow",
+      "event_details": "whats up",
+      "event_date": "2019-05-07",
+      "userId": "1",
+      "id": 12
     }
   ],
   "friends": [

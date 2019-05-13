@@ -77,15 +77,14 @@ const call = {
     },
     messageCall() {
         const saveNewMessage = document.querySelector(".save--message")
-        saveNewMessage.addEventListener("click", (message) => {
-            let messageContent = document.querySelector("new--message--content")
-            let messageDate = document.querySelector("new--message--date")
-            let messageTime = document.querySelector("new--message--time")
-            console.log("Messages", messageContent, messageDate, messageTime)
+        saveNewMessage.addEventListener("click", () => {
+            let messageContent = document.querySelector(".new--message--content").value
+            let newDate = new Date()
+            console.log(newDate)
             const messageObj = {
                 message_content: messageContent,
-                message_Date: messageDate,
-                messageTime: messageTime,
+                 date: newDate,
+                // time: messageTime,
                 userId: sessionStorage.getItem("session_user_id")
             }
             API.save(messagesUrl, messageObj)
