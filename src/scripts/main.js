@@ -3,6 +3,7 @@ import API from "./dataFetch"
 import domBuilder from "./domBuilder";
 import dataFetch from "./dataFetch";
 import call from "./eventCalls";
+import addToFriendsList from "./friendsList";
 
 
 const taskUrl = "http://localhost:3000/tasks";
@@ -192,8 +193,6 @@ messages.addEventListener("click", function(e){
     call.messageCall()
 
 })
-
-
 
 
 //domBuilder.createNewsOutput()
