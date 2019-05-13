@@ -14,10 +14,6 @@ const eventsUrl = "http://localhost:3000/events";
 
 const sign_in_btn = document.querySelector("#sign-in-btn")
 const sign_up_btn = document.querySelector("#sign-up-btn")
-//call.eventCall()
-//call.newscall()
-//call.taskCall()
-//call.messageCall()
 
 const log_out_btn = document.querySelector(".logout")
 
@@ -55,8 +51,6 @@ sign_in_btn.addEventListener("click", function (e) {
                 }
             })
     }
-    //console.log(username + " " + password)
-    //Add code here to ADD user
 
     //Then call function to update DOM
     //At this point SIGN UP SUCCESSFUL! or USERNAME NOT FOUND - SIGN UP!
@@ -179,7 +173,6 @@ events.addEventListener("click", function(e){
     domBuilder.createEventOutput()
     domBuilder.createEventForm()
     call.eventCall()
-
 })
 let tasks = document.querySelector(".tasks")
 tasks.addEventListener("click", function(e){
