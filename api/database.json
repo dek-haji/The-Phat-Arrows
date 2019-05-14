@@ -43,7 +43,7 @@
   ],
   "messages": [
     {
-      "message_content": "I <3 Direwolves and Honesty",
+      "message_content": "I <3 direwolves and bein' honest",
       "userId": "1",
       "userName": "Ned Stark",
       "date": "2014-05-13T20:06:50.620Z",
@@ -78,7 +78,7 @@
       "id": 7
     },
     {
-      "message_content": "I will see all of you soon!",
+      "message_content": "See all of you VERY soon!",
       "userId": "1",
       "userName": "Ned Stark",
       "date": "2018-05-13T20:28:52.466Z",
@@ -176,7 +176,7 @@
     {
       "id": 1,
       "userId": 1,
-      "task_title": "This is a task title",
+      "task_title": "Shovel snow",
       "task_doneBy": "2030-07-14",
       "task_completed": false
     },
@@ -191,7 +191,7 @@
       "id": 7
     },
     {
-      "task_title": "TESTTEST",
+      "task_title": "Give fatherly advice",
       "task_doneBy": "2019-05-16",
       "task_completed": false,
       "userId": "1",
@@ -210,13 +210,6 @@
       "task_completed": false,
       "userId": "1",
       "id": 10
-    },
-    {
-      "task_title": "Dont get Head Removed",
-      "task_doneBy": "2019-05-25",
-      "task_completed": false,
-      "userId": "1",
-      "id": 11
     },
     {
       "task_title": "Do a thing",
@@ -238,6 +231,13 @@
       "task_completed": false,
       "userId": "1",
       "id": 14
+    },
+    {
+      "task_title": "More snow shoveling",
+      "task_doneBy": "2019-05-17",
+      "task_completed": false,
+      "userId": "1",
+      "id": 15
     }
   ],
   "events": [
