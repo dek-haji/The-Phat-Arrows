@@ -206,7 +206,7 @@ const domBuilder = {
                     console.log(ID)
                     //CREATE & POPULATE ELEMENTS
                     let output = document.querySelector("#eventOutput")
-                    let card = document.createElement("div")
+                    let card = document.createElement("section")
                     card.setAttribute("id", `event${ID}`)
 
                     let name = document.createElement("h2")
@@ -318,7 +318,7 @@ const domBuilder = {
                     //CREATE & POPULATE ELEMENTS
                     let output = document.querySelector("#newsOutput")
 
-                    let card = document.createElement("div")
+                    let card = document.createElement("section")
                     card.classList.add("card")
                     let title = document.createElement("h2")
                     title.textContent = article.article_title
@@ -355,7 +355,7 @@ const domBuilder = {
                         //Hide the edit button to prevent reclicks
                         this.style.display = "none"
                         //Create DIV to hold EDIT OPTIONS
-                        let editOptions = document.createElement("div")
+                        let editOptions = document.createElement("section")
                         editOptions.className = "edit-options"
                         //Create the NAME input form
                         let editNameInput = document.createElement("input")
@@ -451,7 +451,7 @@ const domBuilder = {
                     //CREATE & POPULATE ELEMENTS
                     let output = document.querySelector("#taskOutput")
 
-                    let card = document.createElement("div")
+                    let card = document.createElement("section")
                     card.classList.add("card")
                     let name = document.createElement("h4")
                     name.textContent = task.task_title

@@ -88,7 +88,7 @@
       "id": 7
     },
     {
-      "message_content": "Winter is coming",
+      "message_content": "fsdfadasf",
       "userId": "1",
       "userName": "Ned Stark",
       "date": "2019-05-14T04:28:27.432Z",
@@ -317,6 +317,13 @@
       "event_date": "2019-05-11",
       "userId": "1",
       "id": 11
+    },
+    {
+      "event_name": "hellow",
+      "event_details": "whats up",
+      "event_date": "2019-05-21",
+      "userId": "1",
+      "id": 12
     }
   ],
   "friends": [
