@@ -95,24 +95,19 @@ const call = {
                     this.messageCall()
                 })
         })
-    }, addToFriendsList() {
-        const addFriendMessage = document.querySelector(".add--friends")
-        addFriendMessage.addEventListener("click", (friendUser) => {
-            API.getOne (messagesUrl, userId)
-            .then(result => {
-                console.log(result)
-                let newUser = result;
-                curr_id = sessionStorage.getItem("session_user_id")
-                const friendListObj = {
-                    userId: curr_id,
-                    otherFriendsId: newUser
-                    }
-                    API.save(friendsListUrl, friendListObj);
-            })
-        })
-    } 
+    },
+    messageReset() {
+        domBuilder.clearDOM()
+        domBuilder.createMessageOutput()
+        domBuilder.createMessageForm()
+        //this.messageCall()
+    },
+    taskReset() {
+        domBuilder.clearDOM()
+        domBuilder.createTaskOutput()
+        domBuilder.createTaskForm()
+        //this.messageCall()
+    }
 }
-
-
 
 export default call
