@@ -23,21 +23,50 @@
     position: sticky;
 }
 
-.header-label{
-    padding-right: 18em;
-}
+
 .logout{
     padding: .4em;
     margin-left: 20em;
+    display: flex;
+    align-self: flex-end;
 }
 
 .menu{
     visibility: hidden;
+    width: 100%;
 }
 /*
 button{
     width: 50px
 }*/
+.input_output{
+
+
+}
+.input {
+    background-color: rgb(92, 92, 92);
+    display: flex;
+    justify-content: center;
+}
+.input div{
+    padding: .4em;
+}
+.output{
+}
+.card{
+    padding: 1em;
+}
+.card button{
+    width: 20%;
+    margin: .5em;
+    text-align: center;
+
+
+}
+.card p{
+    margin-top: 1.5em;
+}
+
 .add--event--form{
     display: flex;
     justify-content: center;
@@ -49,12 +78,19 @@ button{
     justify-content: center;
     flex-direction: column;
     width: 200px;
-    align-content: center
+    align-content: center;
 }
 .add--task--form{
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 200px;
-    align-content: center
+    align-content: center;
 }
+.save--message{
+    margin: 0 .4em;
+}
+.new--message--content{
+    width: 600px;
+}
+

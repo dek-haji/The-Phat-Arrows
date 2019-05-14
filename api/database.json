@@ -39,11 +39,16 @@
       "user_name": "GeorgeRMartin666",
       "password": "nobookforyou",
       "id": 8
+    },
+    {
+      "user_name": "Sansa",
+      "password": "wannabequeen",
+      "id": 9
     }
   ],
   "messages": [
     {
-      "message_content": "I <3 Direwolves and Honesty",
+      "message_content": "I <3 direwolves and bein' honest",
       "userId": "1",
       "userName": "Ned Stark",
       "date": "2014-05-13T20:06:50.620Z",
@@ -78,11 +83,18 @@
       "id": 7
     },
     {
-      "message_content": "I will see all of you soon!",
+      "message_content": "Winter is coming",
       "userId": "1",
       "userName": "Ned Stark",
-      "date": "2018-05-13T20:28:52.466Z",
-      "id": 8
+      "date": "2019-05-14T04:28:27.432Z",
+      "id": 9
+    },
+    {
+      "message_content": "How is everyone doing down in King's Landing?",
+      "userId": "9",
+      "userName": "Sansa",
+      "date": "2019-05-14T04:44:45.745Z",
+      "id": 10
     }
   ],
   "articles": [
@@ -168,7 +180,7 @@
     {
       "id": 1,
       "userId": 1,
-      "task_title": "This is a task title",
+      "task_title": "Shovel snow",
       "task_doneBy": "2030-07-14",
       "task_completed": false
     },
@@ -183,18 +195,11 @@
       "id": 7
     },
     {
-      "task_title": "TESTTEST",
+      "task_title": "Give fatherly advice",
       "task_doneBy": "2019-05-16",
       "task_completed": false,
       "userId": "1",
       "id": 8
-    },
-    {
-      "task_title": "SDJFSDFDSGSDG",
-      "task_doneBy": "2019-05-09",
-      "task_completed": false,
-      "userId": "1",
-      "id": 9
     },
     {
       "task_title": "PLEASE BE TRUE",
@@ -202,13 +207,6 @@
       "task_completed": false,
       "userId": "1",
       "id": 10
-    },
-    {
-      "task_title": "Dont get Head Removed",
-      "task_doneBy": "2019-05-25",
-      "task_completed": false,
-      "userId": "1",
-      "id": 11
     },
     {
       "task_title": "Do a thing",
@@ -232,10 +230,17 @@
       "id": 14
     },
     {
-      "task_title": "hgkjblk",
-      "task_doneBy": "2019-05-14",
+      "task_title": "More snow shoveling",
+      "task_doneBy": "2019-05-17",
       "task_completed": false,
-      "userId": "2",
+      "userId": "1",
+      "id": 15
+    },
+    {
+      "task_title": "Wash fur coat",
+      "task_doneBy": "2019-05-15",
+      "task_completed": false,
+      "userId": "9",
       "id": 16
     }
   ],

@@ -55,8 +55,10 @@ const domBuilder = {
         let taskContainer = document.getElementById("taskInput");
         let taskDiv = document.createElement("div");
         let taskName = document.createElement("input");
+        taskName.placeholder = "Add a task here"
         let taskCompletion = document.createElement("input");
         let saveTask = document.createElement("button")
+        saveTask.classList.add("btn-outline-info")
 
         // add class to form container
         taskDiv.classList.add("add--task--form");
@@ -80,11 +82,12 @@ const domBuilder = {
 
     },
     createMessageForm() {
-        let messageContainer = document.getElementById("taskInput");
+        //this was working even though its wrong
+        //let messageContainer = document.getElementById("taskInput");
+        let messageContainer = document.getElementById("messageInput");
         let messageDiv = document.createElement("div");
         let messageContent = document.createElement("input");
-        // let messageDate = document.createElement("input");
-        // let messageTime = document.createElement("input");
+        messageContent.placeholder = "Message your friends"
         let saveMessage = document.createElement("button")
 
         // add class to form container
@@ -182,6 +185,9 @@ const domBuilder = {
                         //Remove from DOM
                         let parent = card.parentNode
                         parent.removeChild(card)
+                    })
+                    editEvents.addEventListener("click", (e) => {
+                        console.log(e)
                     })
                     removeButton.textContent = "REMOVE"
                     editEvents.textContent = "EDIT"
@@ -290,7 +296,6 @@ const domBuilder = {
 
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
-                    let editTask = document.createElement("button")
                     //completedBox.setAttribute("type", "checkbox")
                     removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
@@ -299,7 +304,54 @@ const domBuilder = {
                         let parent = card.parentNode
                         parent.removeChild(card)
                     })
+                    //EDIT BUTTON and event listeners
+                    let editInput = document.createElement("input")
+                    editInput.className = "edit-input"
+                    editInput.placeholder = task.task_title;
+                    let editTask = document.createElement("button")
+                    editTask.classList.add("edit-message")
+                    editTask.classList.add("btn-outline-warning")
+                    editTask.textContent = "Edit"
+                    editTask.addEventListener("click", function (e) {
+                        //Hide the edit button to prevent reclicks
+                        this.style.display = "none"
+                        //Add Save and Cancel Buttons Inside  DIV for styling
+                        let editOptions = document.createElement("div")
+                        editOptions.className = "edit-options"
+                        let save = document.createElement("button")
+                        save.textContent = "Save"
+                        save.classList.add("btn-outline-info")
+                        save.addEventListener("click", function (e) {
+                            //console.log(editInput)
+                            let obj = { task_title: editInput.value }
+                            //console.log(obj)
+                            API.editPatch("http://localhost:3000/tasks", ID, obj)
+                                .then(results => {
+                                    console.log(results)
+                                    call.taskReset()
+                                })
+                        })
+                        //This manages the options disappearing when cancel is clicked
+                        let cancel = document.createElement("button")
+                        cancel.textContent = "Cancel"
+                        cancel.classList.add("btn-outline-warning")
+                        cancel.addEventListener("click", function (e) {
+                            console.log("CANCELLING")
+                            editTask.style.display = "initial"
+                            let optionsParent = document.querySelector(".edit-options")
+                            optionsParent.innerHTML = ""
+                            let parent = optionsParent.parentNode
+                            parent.removeChild(editInput)
+                            parent.removeChild(optionsParent)
+                        })
+                        editOptions.appendChild(save)
+                        editOptions.appendChild(cancel)
+                        let parent = editTask.parentNode
+                        parent.appendChild(editInput)
+                        parent.appendChild(editOptions)
 
+                    })
+                    card.appendChild(editTask)
 
 
 
@@ -309,7 +361,6 @@ const domBuilder = {
                     card.appendChild(removeButton)
                     card.appendChild(editTask)
                     output.appendChild(card)
-
                 })
             })
 
@@ -335,25 +386,27 @@ const domBuilder = {
                     let card = document.createElement("div")
                     card.classList.add("card")
                     card.classList.add("border-info")
-
+                    //Add header to show the name of the poster
                     let name = document.createElement("h5")
                     name.textContent = message.userName;
                     card.appendChild(name)
                     name.classList.add("card-header")
-
+                    //Add text content of message
                     let message_text = document.createElement("p")
                     message_text.textContent = message.message_content
                     card.appendChild(message_text)
-                    name.classList.add("card-body")
-
+                    message_text.classList.add("card-body")
+                    //Add timestamp
                     let timeStamp = document.createElement("p")
                     timeStamp.textContent = message.date
                     card.appendChild(timeStamp)
 
-                    //Only Show Remove (and edit) buttons if its your message
+                    //Only Show Remove (and edit) buttons if its YOUR message
                     if (curr_id == message.userId) {
-                        card.classList.add("bg-info")
-                        card.classList.add("text-white")
+                       // name.classList.add("bg-info")
+                       name.style.backgroundColor = "aliceblue"
+                      // card.classList.add("bg-info")
+                        //card.classList.add("text-white")
                         //ADD REMOVE BUTTON AND EVENT LISTENER
                         let removeButton = document.createElement("button")
                         //completedBox.setAttribute("type", "checkbox")
@@ -365,16 +418,60 @@ const domBuilder = {
                             parent.removeChild(card)
                         })
                         removeButton.textContent = "Remove My Message"
-                        removeButton.classList.add("btn-info")
+                        removeButton.classList.add("btn-outline-info")
                         card.appendChild(removeButton)
-                        //ADD EDIT BUTTON and event listener
-                        let editMessage = document.createElement("button")
-                        editMessage.textContent = "Edit My Message"
-                        removeButton.classList.add("btn-warning")
-                        card.appendChild(editMessage)
+
+                        //EDIT BUTTON and event listeners
+                        let editInput = document.createElement("input")
+                        editInput.className = "edit-input"
+                        editInput.placeholder = message_text.textContent;
+
+                        let editButton = document.createElement("button")
+                        editButton.classList.add("edit-message")
+                        editButton.classList.add("btn-outline-warning")
+                        editButton.textContent = "Edit My Message"
+                        editButton.addEventListener("click", function (e) {
+                            //Hide the edit button to prevent reclicks
+                            this.style.display = "none"
+                            //Add Save and Cancel Buttons Inside  DIV for styling
+                            let editOptions = document.createElement("div")
+                            editOptions.className = "edit-options"
+                            let save = document.createElement("button")
+                            save.textContent = "Save"
+                            save.classList.add("btn-outline-info")
+                            save.addEventListener("click", function (e) {
+                                //console.log(editInput)
+                                let obj = { message_content: editInput.value }
+                                //console.log(obj)
+                                API.editPatch("http://localhost:3000/messages",ID, obj)
+                                    .then(results => {
+                                        console.log(results)
+                                        call.messageReset()
+                                    })
+                            })
+                            //This manages the options disappearing when cancel is clicked
+                            let cancel = document.createElement("button")
+                            cancel.textContent = "Cancel"
+                            cancel.classList.add("btn-outline-warning")
+                            cancel.addEventListener("click", function (e) {
+                                console.log("CANCELLING")
+                                editButton.style.display = "initial"
+                                let optionsParent = document.querySelector(".edit-options")
+                                optionsParent.innerHTML = ""
+                                let parent = optionsParent.parentNode
+                                parent.removeChild(editInput)
+                                parent.removeChild(optionsParent)
+                            })
+                            editOptions.appendChild(save)
+                            editOptions.appendChild(cancel)
+                            let parent = editButton.parentNode
+                            parent.appendChild(editInput)
+                            parent.appendChild(editOptions)
+
+                        })
+                        card.appendChild(editButton)
                     }
                     output.appendChild(card)
-
                 })
             })
     },
@@ -386,7 +483,7 @@ const domBuilder = {
         output.innerHTML = ""
         output = document.querySelector("#taskOutput")
         output.innerHTML = ""
-        output.innerHTML = document.querySelector("#messageOutput")
+        output = document.querySelector("#messageOutput")
         output.innerHTML = ""
         //Clear input divs
         let input = document.querySelector("#newsInput")
@@ -395,7 +492,7 @@ const domBuilder = {
         input.innerHTML = ""
         input = document.querySelector("#taskInput")
         input.innerHTML = ""
-        input.innerHTML = document.querySelector("#messageInput")
+        input = document.querySelector("#messageInput")
         input.innerHTML = ""
     }
 

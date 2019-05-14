@@ -133,6 +133,7 @@ function sendUserHome() {
             let home = document.querySelector(".home-div")
             home.appendChild(greeting_div)
             greeting_div.className = "greeting-div"
+            greeting_div.id = "greeting-div"
         })
     //populate menu
     document.querySelector(".menu").style.visibility = "visible"
@@ -143,10 +144,14 @@ log_out_btn.addEventListener("click", function (e) {
     document.querySelector(".menu").style.visibility = "hidden"
     //clear the  session id
     sessionStorage.clear();
+    //Add image back
+    image.style.display = "initial"
     //nuke the greeting dom elements
-    let greeting_div = document.querySelector(".greeting-div")
-    let parent = greeting_div.parentNode
-    parent.removeChild(greeting_div)
+    let greetingExists = document.getElementById("greeting-div")
+    if (greetingExists) {
+        let greetingParent = greetingExists.parentNode
+        greetingParent.removeChild(greetingExists)
+    }
     //Make credential forms show up again
     let sign_in = document.querySelector(".sign-in")
     let sign_up = document.querySelector(".sign-up")
@@ -161,8 +166,30 @@ log_out_btn.addEventListener("click", function (e) {
 
 })
 //ADD LISTENERS TO NAV BAR
+//
+//
+var image = document.querySelector(".bg-img")
+
+//
+
+let home = document.querySelector(".home")
+home.addEventListener("click", function (e) {
+    image.style.display = "initial"
+    domBuilder.clearDOM()
+    //Build the Output and input Form
+    sendUserHome()
+
+})
 let news = document.querySelector(".news")
 news.addEventListener("click", function (e) {
+    //remove bg image
+    image.style.display = "none"
+    //remove greeting
+    let greetingExists = document.getElementById("greeting-div")
+    if (greetingExists) {
+        let greetingParent = greetingExists.parentNode
+        greetingParent.removeChild(greetingExists)
+    }
     domBuilder.clearDOM()
     //Build the Output and input Form
     domBuilder.createNewsOutput()
@@ -172,6 +199,14 @@ news.addEventListener("click", function (e) {
 })
 let events = document.querySelector(".events")
 events.addEventListener("click", function (e) {
+    //remove bg image
+    image.style.display = "none"
+    //remove greeting
+    let greetingExists = document.getElementById("greeting-div")
+    if (greetingExists) {
+        let greetingParent = greetingExists.parentNode
+        greetingParent.removeChild(greetingExists)
+    }
     domBuilder.clearDOM()
     //Build the Output and input Form
     domBuilder.createEventOutput()
@@ -180,6 +215,14 @@ events.addEventListener("click", function (e) {
 })
 let tasks = document.querySelector(".tasks")
 tasks.addEventListener("click", function (e) {
+    //remove bg image
+    image.style.display = "none"
+    //remove greeting
+    let greetingExists = document.getElementById("greeting-div")
+    if (greetingExists) {
+        let greetingParent = greetingExists.parentNode
+        greetingParent.removeChild(greetingExists)
+    }
     domBuilder.clearDOM()
     //Build the Output and input Form
     domBuilder.createTaskOutput()
@@ -189,12 +232,19 @@ tasks.addEventListener("click", function (e) {
 })
 let messages = document.querySelector(".messages")
 messages.addEventListener("click", function (e) {
+    //remove bg image
+    image.style.display = "none"
+    //remove greeting
+    let greetingExists = document.getElementById("greeting-div")
+    if (greetingExists) {
+        let greetingParent = greetingExists.parentNode
+        greetingParent.removeChild(greetingExists)
+    }
     domBuilder.clearDOM()
     //Build the Output and input Form
     domBuilder.createMessageOutput()
     domBuilder.createMessageForm()
     call.messageCall()
-
 })
 
 

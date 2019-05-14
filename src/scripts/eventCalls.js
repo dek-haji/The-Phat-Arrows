@@ -95,9 +95,19 @@ const call = {
                     this.messageCall()
                 })
         })
+    },
+    messageReset() {
+        domBuilder.clearDOM()
+        domBuilder.createMessageOutput()
+        domBuilder.createMessageForm()
+        //this.messageCall()
+    },
+    taskReset() {
+        domBuilder.clearDOM()
+        domBuilder.createTaskOutput()
+        domBuilder.createTaskForm()
+        //this.messageCall()
     }
 }
-
-
 
 export default call
