@@ -152,14 +152,6 @@
       "id": 7
     },
     {
-      "article_title": "sdfsdfsdfds",
-      "article_blurb": "sdfsdfsdfsdfsdfdsfsd",
-      "article_link": "sdfsdfsdfsdfsdf",
-      "article_published": "2019-05-16",
-      "userId": "1",
-      "id": 8
-    },
-    {
       "article_title": "TEST",
       "article_blurb": "TESTT",
       "article_link": "TESTT",
@@ -168,20 +160,28 @@
       "id": 9
     },
     {
-      "article_title": "Halla",
-      "article_blurb": "yaa ahlu raabi",
-      "article_link": "hahha",
-      "article_published": "2019-05-15",
-      "userId": "1",
-      "id": 10
-    },
-    {
       "article_title": "low ",
       "article_blurb": "high",
       "article_link": "medium",
       "article_published": "2019-05-14",
       "userId": "1",
       "id": 11
+    },
+    {
+      "article_title": "LOL",
+      "article_blurb": "LOL",
+      "article_link": "LOL",
+      "article_published": "2019-05-08",
+      "userId": "2",
+      "id": 12
+    },
+    {
+      "article_title": "hrteh",
+      "article_blurb": "eht",
+      "article_link": "ehey",
+      "article_published": "2019-05-20",
+      "userId": "2",
+      "id": 13
     }
   ],
   "tasks": [
@@ -250,6 +250,13 @@
       "task_completed": false,
       "userId": "9",
       "id": 16
+    },
+    {
+      "task_title": "dfgasjkdgflask",
+      "task_doneBy": "2019-05-13",
+      "task_completed": false,
+      "userId": "2",
+      "id": 17
     }
   ],
   "events": [
@@ -304,13 +311,6 @@
       "event_date": "2019-05-24",
       "userId": "1",
       "id": 11
-    },
-    {
-      "event_name": "yoooooow",
-      "event_details": "whats up",
-      "event_date": "2019-05-07",
-      "userId": "1",
-      "id": 12
     }
   ],
   "friends": [

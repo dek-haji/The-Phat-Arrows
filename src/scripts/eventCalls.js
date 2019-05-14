@@ -107,6 +107,11 @@ const call = {
         domBuilder.createTaskOutput()
         domBuilder.createTaskForm()
         //this.messageCall()
+    },
+    eventsReset(){
+        domBuilder.clearDOM()
+        domBuilder.createEventOutput()
+        domBuilder.createEventForm()
     }
 }
 
