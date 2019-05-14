@@ -113,6 +113,11 @@ const call = {
         domBuilder.createNewsOutput()
         domBuilder.createNewsForm()
         //this.messageCall()
+    },
+    eventsReset(){
+        domBuilder.clearDOM()
+        domBuilder.createEventOutput()
+        domBuilder.createEventForm()
     }
 }
 

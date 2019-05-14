@@ -1,6 +1,7 @@
 import API from "./dataFetch";
 import call from "./eventCalls";
-
+import eventEditForm from "./editJs";
+const eventsUrl = "http://localhost:3000/events";
 const domBuilder = {
 
     navbar() {
@@ -151,6 +152,42 @@ const domBuilder = {
         messageContainer.appendChild(messageDiv)
 
     },
+            createEventForm() {
+                // let homepage = document.querySelector(".home-div");
+                // homepage.innerHTML = "";
+                let eventContainer = document.getElementById("eventInput");
+
+                // create form HTML elements
+                let newEventDiv = document.createElement("div");
+                let newEventName = document.createElement("input");
+                let newEventDate = document.createElement("input");
+                let newEventLocation = document.createElement("input");
+                let saveEventFormButton = document.createElement("button");
+
+                // add class to form container
+                newEventDiv.classList.add("add--event--form");
+                saveEventFormButton.classList.add("event--save--button");
+                newEventName.classList.add("new--event--name");
+                newEventDate.classList.add("new--event--date");
+                newEventLocation.classList.add("new--event--location");
+
+                // add text to button
+                saveEventFormButton.textContent = "Save Event"
+
+                // define input attributes
+                newEventName.setAttribute("type", "text");
+                newEventDate.setAttribute("type", "date");
+                newEventLocation.setAttribute("type", "text");
+
+                // append input fields to the form container
+                newEventDiv.appendChild(newEventName);
+                newEventDiv.appendChild(newEventDate);
+                newEventDiv.appendChild(newEventLocation);
+                newEventDiv.appendChild(saveEventFormButton);
+
+                // append form container to event container (temporarily)
+                eventContainer.appendChild(newEventDiv);
+            },
 
     createEventOutput() {
         //GET DATA
@@ -166,10 +203,11 @@ const domBuilder = {
                 newOrder.reverse()
                 newOrder.forEach(event => {
                     let ID = event.id
+                    console.log(ID)
                     //CREATE & POPULATE ELEMENTS
                     let output = document.querySelector("#eventOutput")
                     let card = document.createElement("div")
-                    card.classList.add("card")
+                    card.setAttribute("id", `event${ID}`)
 
                     let name = document.createElement("h2")
                     name.textContent = event.event_name
@@ -184,7 +222,6 @@ const domBuilder = {
                     card.appendChild(date)
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
-                    let editEvents = document.createElement("button")
                     removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
                         API.delete("http://localhost:3000/events", ID)
@@ -192,20 +229,76 @@ const domBuilder = {
                         let parent = card.parentNode
                         parent.removeChild(card)
                     })
-                    editEvents.addEventListener("click", (e) => {
-                        console.log(e)
+                    //EDIT BUTTON and event listeners
+                    let editInput1 = document.createElement("input")
+                    let editInput2 = document.createElement("input")
+                    let editInput3 = document.createElement("input")
+
+                    editInput1.className = "edit-input1"
+                    editInput2.className = "edit-input2"
+                    editInput3.className = "edit-input3"
+
+                    editInput1.placeholder = event.event_name;
+                    editInput2.placeholder = event.event_details;
+                    editInput3.placeholder = event.event_date
+
+                    let editEvents = document.createElement("button")
+                    editEvents.classList.add("edit-events")
+                    editEvents.classList.add("btn-outline-warning")
+                    editEvents.textContent = "Edit"
+                    editEvents.addEventListener("click", function(e){
+                         //Hide the edit button to prevent reclicks
+                         this.style.display = "none"
+                         //Add Save and Cancel Buttons Inside  DIV for styling
+                         let editOptions = document.createElement("div")
+                         editOptions.className = "edit-options"
+                         let save = document.createElement("button")
+                         save.textContent = "Save"
+                         save.classList.add("btn-outline-info")
+                         save.addEventListener("click", function (e) {
+                             //console.log(editInput)
+                             let obj = { event_name: editInput1.value,
+                                        event_details: editInput2.value,
+                                        event_date: editInput3.value }
+                                         //console.log(obj)
+                            API.editPatch(eventsUrl, ID, obj)
+                            .then(results => {
+                                console.log(results)
+                                call.eventsReset()
+                            })
+                         })
+                          //This manages the options disappearing when cancel is clicked
+                        let cancel = document.createElement("button")
+                        cancel.textContent = "Cancel"
+                        cancel.classList.add("btn-outline-warning")
+                        cancel.addEventListener("click", function (e) {
+                            console.log("CANCELLING")
+                            editEvents.style.display = "initial"
+                            let optionsParent = document.querySelector(".edit-options")
+                            optionsParent.innerHTML = ""
+                            let parent = optionsParent.parentNode
+                            parent.removeChild(editInput)
+                            parent.removeChild(optionsParent)
+                        })
+                        editOptions.appendChild(save)
+                        editOptions.appendChild(cancel)
+                        let parent = editEvents.parentNode
+                        parent.appendChild(editInput1)
+                        parent.appendChild(editInput2)
+                        parent.appendChild(editInput3)
+                        parent.appendChild(editOptions)
                     })
-                    removeButton.textContent = "REMOVE"
+                    card.appendChild(editEvents)
+
+                    removeButton.textContent = "REMOVE";
                     editEvents.textContent = "EDIT"
                     removeButton.classList.add("btn-outline-success")
                     card.appendChild(removeButton)
                     card.appendChild(editEvents)
-
                     output.appendChild(card)
-
-                })
-            })
-    },
+        })
+    })
+        },
     createNewsOutput() {
         //GET DATA
         var curr_id = sessionStorage.getItem("session_user_id")
@@ -237,7 +330,7 @@ const domBuilder = {
                     blurb.textContent = article.article_blurb
                     card.appendChild(blurb)
 
-                    let url = document.createElement("p")
+                    let url = document.createElement("a")
                     url.textContent = article.article_link
                     card.appendChild(url)
 
@@ -569,5 +662,6 @@ const domBuilder = {
     }
 
 }
+
 
 export default domBuilder
