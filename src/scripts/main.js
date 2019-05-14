@@ -144,10 +144,14 @@ log_out_btn.addEventListener("click", function (e) {
     document.querySelector(".menu").style.visibility = "hidden"
     //clear the  session id
     sessionStorage.clear();
+    //Add image back
+    image.style.display = "initial"
     //nuke the greeting dom elements
-    let greeting_div = document.querySelector(".greeting-div")
-    let parent = greeting_div.parentNode
-    parent.removeChild(greeting_div)
+    let greetingExists = document.getElementById("greeting-div")
+    if (greetingExists) {
+        let greetingParent = greetingExists.parentNode
+        greetingParent.removeChild(greetingExists)
+    }
     //Make credential forms show up again
     let sign_in = document.querySelector(".sign-in")
     let sign_up = document.querySelector(".sign-up")
@@ -164,7 +168,7 @@ log_out_btn.addEventListener("click", function (e) {
 //ADD LISTENERS TO NAV BAR
 //
 //
-let image = document.querySelector(".bg-img")
+var image = document.querySelector(".bg-img")
 
 //
 
