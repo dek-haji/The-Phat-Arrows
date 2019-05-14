@@ -1,6 +1,7 @@
 import API from "./dataFetch";
 import call from "./eventCalls";
-
+import eventEditForm from "./editJs";
+const eventsUrl = "http://localhost:3000/events";
 const domBuilder = {
 
     navbar() {
@@ -11,46 +12,6 @@ const domBuilder = {
             let parent = image.parentNode
             parent.removeChild(image)
         })
-    },
-    createEventForm() {
-        // let homepage = document.querySelector(".home-div");
-        // homepage.innerHTML = "";
-        let eventContainer = document.getElementById("eventInput");
-
-        // create form HTML elements
-        let newEventDiv = document.createElement("div");
-        let newEventName = document.createElement("input");
-        let newEventDate = document.createElement("input");
-        let newEventLocation = document.createElement("input");
-        let saveEventFormButton = document.createElement("button");
-
-        // add class to form container
-        newEventDiv.classList.add("add--event--form");
-        saveEventFormButton.classList.add("event--save--button");
-        newEventName.classList.add("new--event--name");
-        newEventDate.classList.add("new--event--date");
-        newEventLocation.classList.add("new--event--location");
-
-        // add text to button
-        saveEventFormButton.textContent = "Save Event"
-
-        // define input attributes
-        newEventName.setAttribute("type", "text");
-        newEventDate.setAttribute("type", "date");
-        newEventLocation.setAttribute("type", "text");
-
-        // append input fields to the form container
-        newEventDiv.appendChild(newEventName);
-        newEventDiv.appendChild(newEventDate);
-        newEventDiv.appendChild(newEventLocation);
-        newEventDiv.appendChild(saveEventFormButton);
-
-        // append form container to event container (temporarily)
-        eventContainer.appendChild(newEventDiv);
-
-    },
-    eventEditForm(){
-
     },
     createNewsForm() {
         let newsContainer = document.getElementById("newsInput");
@@ -144,6 +105,42 @@ const domBuilder = {
         messageContainer.appendChild(messageDiv)
 
     },
+            createEventForm() {
+                // let homepage = document.querySelector(".home-div");
+                // homepage.innerHTML = "";
+                let eventContainer = document.getElementById("eventInput");
+
+                // create form HTML elements
+                let newEventDiv = document.createElement("div");
+                let newEventName = document.createElement("input");
+                let newEventDate = document.createElement("input");
+                let newEventLocation = document.createElement("input");
+                let saveEventFormButton = document.createElement("button");
+
+                // add class to form container
+                newEventDiv.classList.add("add--event--form");
+                saveEventFormButton.classList.add("event--save--button");
+                newEventName.classList.add("new--event--name");
+                newEventDate.classList.add("new--event--date");
+                newEventLocation.classList.add("new--event--location");
+
+                // add text to button
+                saveEventFormButton.textContent = "Save Event"
+
+                // define input attributes
+                newEventName.setAttribute("type", "text");
+                newEventDate.setAttribute("type", "date");
+                newEventLocation.setAttribute("type", "text");
+
+                // append input fields to the form container
+                newEventDiv.appendChild(newEventName);
+                newEventDiv.appendChild(newEventDate);
+                newEventDiv.appendChild(newEventLocation);
+                newEventDiv.appendChild(saveEventFormButton);
+
+                // append form container to event container (temporarily)
+                eventContainer.appendChild(newEventDiv);
+            },
 
     createEventOutput() {
         //GET DATA
@@ -159,10 +156,11 @@ const domBuilder = {
                 newOrder.reverse()
                 newOrder.forEach(event => {
                     let ID = event.id
+                    console.log(ID)
                     //CREATE & POPULATE ELEMENTS
                     let output = document.querySelector("#eventOutput")
                     let card = document.createElement("div")
-                    card.classList.add("card")
+                    card.setAttribute("id", `event${ID}`)
 
                     let name = document.createElement("h2")
                     name.textContent = event.event_name
@@ -185,9 +183,6 @@ const domBuilder = {
                         let parent = card.parentNode
                         parent.removeChild(card)
                     })
-                    editEvents.addEventListener("click", (e)=> {
-                        console.log(e)
-                    })
                     removeButton.textContent = "REMOVE"
                     editEvents.textContent = "EDIT"
                     removeButton.classList.add("btn-outline-success")
@@ -196,9 +191,20 @@ const domBuilder = {
 
                     output.appendChild(card)
 
+                    editEvents.addEventListener("click", ()=> {
+                        API.getOne(eventsUrl,ID).then(eventData => {
+                            console.log(eventData)
+                        console.log(ID)
+                        let editID = `edited${ID}`;
+                        let editedName = eventData.event_name;
+                        let editedDetails = eventData.event_details;
+                        let editedDate = eventData.event_date
+                    });
+
+                })
                 })
             })
-    },
+        },
     createNewsOutput() {
         //GET DATA
         var curr_id = sessionStorage.getItem("session_user_id")

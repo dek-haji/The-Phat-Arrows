@@ -154,6 +154,14 @@
       "article_published": "2019-05-14",
       "userId": "1",
       "id": 11
+    },
+    {
+      "article_title": "LOL",
+      "article_blurb": "LOL",
+      "article_link": "LOL",
+      "article_published": "2019-05-08",
+      "userId": "2",
+      "id": 12
     }
   ],
   "tasks": [
@@ -222,6 +230,13 @@
       "task_completed": false,
       "userId": "1",
       "id": 14
+    },
+    {
+      "task_title": "hgkjblk",
+      "task_doneBy": "2019-05-14",
+      "task_completed": false,
+      "userId": "2",
+      "id": 16
     }
   ],
   "events": [
@@ -283,6 +298,20 @@
       "event_date": "2019-05-07",
       "userId": "1",
       "id": 12
+    },
+    {
+      "event_name": "sas",
+      "event_details": "ssax",
+      "event_date": "2019-05-15",
+      "userId": "2",
+      "id": 13
+    },
+    {
+      "event_name": "yoooow",
+      "event_details": "hahah",
+      "event_date": "2019-05-15",
+      "userId": "2",
+      "id": 14
     }
   ],
   "friends": [
