@@ -175,6 +175,11 @@ var image = document.querySelector(".bg-img")
 let home = document.querySelector(".home")
 home.addEventListener("click", function (e) {
     image.style.display = "initial"
+    let greetingExists = document.getElementById("greeting-div")
+    if (greetingExists) {
+        let greetingParent = greetingExists.parentNode
+        greetingParent.removeChild(greetingExists)
+    }
     domBuilder.clearDOM()
     //Build the Output and input Form
     sendUserHome()
