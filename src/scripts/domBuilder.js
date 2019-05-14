@@ -178,7 +178,6 @@ const domBuilder = {
                     card.appendChild(date)
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
-                    let editEvents = document.createElement("button")
                     removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
                         API.delete("http://localhost:3000/events", ID)
@@ -186,30 +185,75 @@ const domBuilder = {
                         let parent = card.parentNode
                         parent.removeChild(card)
                     })
-                    editEvents.addEventListener("click", (e) => {
-                        console.log(e)
+                    //EDIT BUTTON and event listeners
+                    let editInput1 = document.createElement("input")
+                    let editInput2 = document.createElement("input")
+                    let editInput3 = document.createElement("input")
+
+                    editInput1.className = "edit-input1"
+                    editInput2.className = "edit-input2"
+                    editInput3.className = "edit-input3"
+
+                    editInput1.placeholder = event.event_name;
+                    editInput2.placeholder = event.event_details;
+                    editInput3.placeholder = event.event_date
+
+                    let editEvents = document.createElement("button")
+                    editEvents.classList.add("edit-events")
+                    editEvents.classList.add("btn-outline-warning")
+                    editEvents.textContent = "Edit"
+                    editEvents.addEventListener("click", function(e){
+                         //Hide the edit button to prevent reclicks
+                         this.style.display = "none"
+                         //Add Save and Cancel Buttons Inside  DIV for styling
+                         let editOptions = document.createElement("div")
+                         editOptions.className = "edit-options"
+                         let save = document.createElement("button")
+                         save.textContent = "Save"
+                         save.classList.add("btn-outline-info")
+                         save.addEventListener("click", function (e) {
+                             //console.log(editInput)
+                             let obj = { event_name: editInput1.value,
+                                        event_details: editInput2.value,
+                                        event_date: editInput3.value }
+                                         //console.log(obj)
+                            API.editPatch(eventsUrl, ID, obj)
+                            .then(results => {
+                                console.log(results)
+                                call.eventsReset()
+                            })
+                         })
+                          //This manages the options disappearing when cancel is clicked
+                        let cancel = document.createElement("button")
+                        cancel.textContent = "Cancel"
+                        cancel.classList.add("btn-outline-warning")
+                        cancel.addEventListener("click", function (e) {
+                            console.log("CANCELLING")
+                            editEvents.style.display = "initial"
+                            let optionsParent = document.querySelector(".edit-options")
+                            optionsParent.innerHTML = ""
+                            let parent = optionsParent.parentNode
+                            parent.removeChild(editInput)
+                            parent.removeChild(optionsParent)
+                        })
+                        editOptions.appendChild(save)
+                        editOptions.appendChild(cancel)
+                        let parent = editEvents.parentNode
+                        parent.appendChild(editInput1)
+                        parent.appendChild(editInput2)
+                        parent.appendChild(editInput3)
+                        parent.appendChild(editOptions)
                     })
-                    removeButton.textContent = "REMOVE"
+                    card.appendChild(editEvents)
+
+                    removeButton.textContent = "REMOVE";
                     editEvents.textContent = "EDIT"
                     removeButton.classList.add("btn-outline-success")
                     card.appendChild(removeButton)
                     card.appendChild(editEvents)
-
                     output.appendChild(card)
-
-                    editEvents.addEventListener("click", ()=> {
-                        API.getOne(eventsUrl,ID).then(eventData => {
-                            console.log(eventData)
-                        console.log(ID)
-                        let editID = `edited${ID}`;
-                        let editedName = eventData.event_name;
-                        let editedDetails = eventData.event_details;
-                        let editedDate = eventData.event_date
-                    });
-
-                })
-                })
-            })
+        })
+    })
         },
     createNewsOutput() {
         //GET DATA
@@ -256,6 +300,9 @@ const domBuilder = {
                         let parent = card.parentNode
                         parent.removeChild(card)
                     })
+
+
+
                     removeButton.textContent = "REMOVE"
                     editNews.textContent = "EDIT"
                     removeButton.classList.add("btn-outline-success")
