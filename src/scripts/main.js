@@ -95,7 +95,7 @@ sign_up_btn.addEventListener("click", function (e) {
                                     let sessionName = result[0].user_name
                                     sessionStorage.setItem("session_user_name", sessionName)
                                     sessionStorage.setItem("session_user_id", sessionId)
-                                    sendUserHome()
+                                    // sendUserHome()
                                 })
                         })
                 }

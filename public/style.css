@@ -51,10 +51,10 @@ button{
 .input div{
     padding: .4em;
 }
-.output{
-}
+
 .card{
     padding: 1em;
+    width: 420px
 }
 .card button{
     width: 20%;
