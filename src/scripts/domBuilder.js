@@ -391,8 +391,10 @@ const domBuilder = {
 
                     //Only Show Remove (and edit) buttons if its YOUR message
                     if (curr_id == message.userId) {
-                        card.classList.add("bg-info")
-                        card.classList.add("text-white")
+                       // name.classList.add("bg-info")
+                       name.style.backgroundColor = "aliceblue"
+                      // card.classList.add("bg-info")
+                        //card.classList.add("text-white")
                         //ADD REMOVE BUTTON AND EVENT LISTENER
                         let removeButton = document.createElement("button")
                         //completedBox.setAttribute("type", "checkbox")
