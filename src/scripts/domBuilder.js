@@ -233,7 +233,9 @@ const domBuilder = {
                             let optionsParent = document.querySelector(".edit-options")
                             optionsParent.innerHTML = ""
                             let parent = optionsParent.parentNode
-                            parent.removeChild(editInput)
+                            parent.removeChild(editInput1)
+                            parent.removeChild(editInput2)
+                            parent.removeChild(editInput3)
                             parent.removeChild(optionsParent)
                         })
                         editOptions.appendChild(save)
@@ -430,7 +432,7 @@ const domBuilder = {
                     //CREATE & POPULATE ELEMENTS
                     let output = document.querySelector("#messageOutput")
 
-                    let card = document.createElement("div")
+                    let card = document.createElement("section")
                     card.classList.add("card")
                     card.classList.add("border-info")
                     //Add header to show the name of the poster
