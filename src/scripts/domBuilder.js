@@ -20,9 +20,12 @@ const domBuilder = {
         // create form HTML elements
         let newEventDiv = document.createElement("div");
         let newEventName = document.createElement("input");
+        newEventName.placeholder = "enter event name"
         let newEventDate = document.createElement("input");
         let newEventLocation = document.createElement("input");
+        newEventLocation.placeholder = "enter event location"
         let saveEventFormButton = document.createElement("button");
+        saveEventFormButton.classList.add("btn-outline-info")
 
         // add class to form container
         newEventDiv.classList.add("add--event--form");
@@ -54,10 +57,14 @@ const domBuilder = {
         // create form HTML elements
         let newsDiv = document.createElement("div");
         let newsName = document.createElement("input");
+        newsName.placeholder = "article name"
         let newsSynopsis = document.createElement("input");
+        newsSynopsis.placeholder = "article contents"
         let newsURL = document.createElement("input");
+        newsURL.placeholder = "paste link here"
         let publishDate = document.createElement("input");
         let saveNewsButton = document.createElement("button");
+        saveNewsButton.classList.add("btn-outline-info")
 
         // add class to form container
         newsDiv.classList.add("add--news--form");
@@ -236,7 +243,9 @@ const domBuilder = {
 
                     //ADD REMOVE BUTTON AND EVENT LISTENER
                     let removeButton = document.createElement("button")
-                    let editNews = document.createElement("button")
+                    removeButton.textContent = "REMOVE"
+                    removeButton.classList.add("btn-outline-success")
+                    //Remove Button Functionality
                     removeButton.addEventListener("click", function (event) {
                         //Remove from API/JSON
                         API.delete("http://localhost:3000/articles", ID)
@@ -244,9 +253,84 @@ const domBuilder = {
                         let parent = card.parentNode
                         parent.removeChild(card)
                     })
-                    removeButton.textContent = "REMOVE"
+                    //EDIT BUTTON FUNCTIONALITY
+                    let editNews = document.createElement("button")
                     editNews.textContent = "EDIT"
-                    removeButton.classList.add("btn-outline-success")
+                    editNews.addEventListener("click", function (e) {
+                        //Hide the edit button to prevent reclicks
+                        this.style.display = "none"
+                        //Create DIV to hold EDIT OPTIONS
+                        let editOptions = document.createElement("div")
+                        editOptions.className = "edit-options"
+                        //Create the NAME input form
+                        let editNameInput = document.createElement("input")
+                        editNameInput.className = "edit-input"
+                        editNameInput.placeholder = article.article_title;
+                        //Create the CONTENTS input form
+                        let editContentsInput = document.createElement("input")
+                        editContentsInput.className = "edit-input"
+                        editContentsInput.placeholder = article.article_blurb;
+                        //Create the URL input form
+                        let editURLInput = document.createElement("input")
+                        editURLInput.className = "edit-input"
+                        editURLInput.placeholder = article.article_link;
+                        //Create the DATE input form
+                        let editDateInput = document.createElement("input")
+                        editDateInput.className = "edit-input"
+                        editDateInput.placeholder = article.article_published;
+                        //Create the Save button
+                        let save = document.createElement("button")
+                        save.textContent = "Save"
+                        save.classList.add("btn-outline-info")
+                        //Add the save button to the EDIT OPTIONS DIV
+                        editOptions.appendChild(save)
+                        save.addEventListener("click", function (e) {
+                            //console.log(editInput)
+                            let obj = {
+                                article_title: editNameInput.value,
+                                article_blurb: editContentsInput.value,
+                                article_link: editURLInput.value,
+                                article_published: editDateInput.value
+                            }
+                            //console.log(obj)
+                            API.editPatch("http://localhost:3000/articles", ID, obj)
+                                .then(results => {
+                                    console.log(results)
+                                    call.articleReset()
+                                })
+                        })
+                        //Create the cancel button
+                        let cancel = document.createElement("button")
+                        cancel.textContent = "Cancel"
+                        cancel.classList.add("btn-outline-warning")
+                        //Add the cancel button to the EDIT OPTIONS DIV
+                        editOptions.appendChild(cancel)
+                        //This manages the options disappearing when cancel is clicked
+                        cancel.addEventListener("click", function (e) {
+                            console.log("CANCELLING")
+                            //Make original Edit Button reappear
+                            editNews.style.display = "initial"
+                            //Remove the EDIT OPTIONS DIV and all of its children
+                            let optionsParent = document.querySelector(".edit-options")
+                            optionsParent.innerHTML = ""
+                            let parent = optionsParent.parentNode
+                            parent.removeChild(editNameInput)
+                            parent.removeChild(editContentsInput)
+                            parent.removeChild(editURLInput)
+                            parent.removeChild(editDateInput)
+                            parent.removeChild(optionsParent)
+                        })
+                        //Add the Edit Input field to the card along with Edit Options
+                        let parent = editNews.parentNode
+                        parent.appendChild(editNameInput)
+                        parent.appendChild(editContentsInput)
+                        parent.appendChild(editURLInput)
+                        parent.appendChild(editDateInput)
+                        parent.appendChild(editOptions)
+
+
+                    })
+                    //Add Edit, Remove and Card info to DOM
                     card.appendChild(removeButton)
                     card.appendChild(editNews)
                     output.appendChild(card)
@@ -391,9 +475,9 @@ const domBuilder = {
 
                     //Only Show Remove (and edit) buttons if its YOUR message
                     if (curr_id == message.userId) {
-                       // name.classList.add("bg-info")
-                       name.style.backgroundColor = "aliceblue"
-                      // card.classList.add("bg-info")
+                        // name.classList.add("bg-info")
+                        name.style.backgroundColor = "aliceblue"
+                        // card.classList.add("bg-info")
                         //card.classList.add("text-white")
                         //ADD REMOVE BUTTON AND EVENT LISTENER
                         let removeButton = document.createElement("button")
@@ -431,7 +515,7 @@ const domBuilder = {
                                 //console.log(editInput)
                                 let obj = { message_content: editInput.value }
                                 //console.log(obj)
-                                API.editPatch("http://localhost:3000/messages",ID, obj)
+                                API.editPatch("http://localhost:3000/messages", ID, obj)
                                     .then(results => {
                                         console.log(results)
                                         call.messageReset()

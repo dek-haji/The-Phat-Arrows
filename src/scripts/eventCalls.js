@@ -107,6 +107,12 @@ const call = {
         domBuilder.createTaskOutput()
         domBuilder.createTaskForm()
         //this.messageCall()
+    },
+    articleReset() {
+        domBuilder.clearDOM()
+        domBuilder.createNewsOutput()
+        domBuilder.createNewsForm()
+        //this.messageCall()
     }
 }
 
