@@ -76,7 +76,18 @@ const API = {
       .then(editedDated => {
         console.log("this is edited stuff", editedDated)
       });
-
+  },
+  editPatch: function (url, id, object) {
+    return fetch(`${url}/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(object)
+    }).then(response => response.json())
+      .then(editedDated => {
+        console.log("this is edited stuff", editedDated)
+      });
   }
 }
 
